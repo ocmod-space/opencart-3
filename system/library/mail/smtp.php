@@ -2,7 +2,7 @@
 
 namespace Mail;
 
-class Smtp {
+class Smtp extends \stdClass {
 	public $smtp_hostname;
 	public $smtp_username;
 	public $smtp_password;
@@ -194,7 +194,9 @@ class Smtp {
 			$lines = explode("\n", $message);
 
 			foreach ($lines as $line) {
-				$results = str_split($line, $length);
+				// $results = str_split($line, $length);
+				// see https://php.watch/versions/8.2/str_split-empty-string-empty-array
+				$results = ($line === '') ? array('') : str_split($line, $length);
 
 				foreach ($results as $result) {
 					if (substr(PHP_OS, 0, 3) != 'WIN') {

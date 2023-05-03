@@ -4,6 +4,8 @@ namespace Cart;
 
 class Weight {
 	private $weights = array();
+	private $db;
+	private $config;
 
 	public function __construct($registry) {
 		$this->db = $registry->get('db');

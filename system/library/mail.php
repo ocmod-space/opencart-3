@@ -12,7 +12,7 @@
 /**
  * Mail class.
  */
-class Mail {
+class Mail extends \stdClass {
 	protected $to;
 	protected $from;
 	protected $sender;

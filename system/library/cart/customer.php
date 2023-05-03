@@ -3,6 +3,11 @@
 namespace Cart;
 
 class Customer {
+	private $config;
+	private $db;
+	private $request;
+	private $session;
+
 	private $customer_id;
 	private $firstname;
 	private $lastname;

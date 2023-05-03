@@ -13,8 +13,9 @@ class MySQLi {
 		}
 
 		if (!$mysqli->connect_errno) {
+			mysqli_report(MYSQLI_REPORT_ERROR);
 			$this->connection = $mysqli;
-			$this->connection->report_mode = MYSQLI_REPORT_ERROR;
+//			$this->connection->report_mode = MYSQLI_REPORT_ERROR;
 			$this->connection->set_charset('utf8');
 			$this->connection->query("SET SESSION sql_mode = 'NO_ZERO_IN_DATE,NO_ENGINE_SUBSTITUTION'");
 		} else {
@@ -52,7 +53,7 @@ class MySQLi {
 	}
 
 	public function escape($value) {
-		return $this->connection->real_escape_string($value);
+		return $this->connection->real_escape_string(($value === null) ? '' : $value);
 	}
 
 	public function countAffected() {

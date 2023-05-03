@@ -4,6 +4,7 @@ namespace Session;
 
 final class DB {
 	public $maxlifetime;
+	public $db;
 
 	public function __construct($registry) {
 		$this->db = $registry->get('db');
@@ -19,7 +20,7 @@ final class DB {
 		if ($query->num_rows) {
 			return json_decode($query->row['data'], true);
 		} else {
-			return false;
+			return array();
 		}
 	}
 

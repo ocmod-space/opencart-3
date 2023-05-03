@@ -12,7 +12,7 @@
 /**
  * Proxy class.
  */
-class Proxy {
+class Proxy extends \stdClass {
 	/**
 	 * @param string $key
 	 */

@@ -10,7 +10,7 @@ class ModelExtensionDashboardSale extends Model {
 
 		$query = $this->db->query($sql);
 
-		return $query->row['total'];
+		return isset($query->row['total']) ? $query->row['total'] : 0.00;
 	}
 
 	public function getTotalOrdersByCountry() {
@@ -162,9 +162,9 @@ class ModelExtensionDashboardSale extends Model {
 
 		switch ($group) {
 			case 'day':
-				$sql .= " GROUP BY YEAR(o.date_added), MONTH(o.date_added), DAY(o.date_added)";
+			$sql .= " GROUP BY YEAR(o.date_added), MONTH(o.date_added), DAY(o.date_added)";
 
-				break;
+			break;
 
 			default:
 			case 'week':
@@ -211,9 +211,9 @@ class ModelExtensionDashboardSale extends Model {
 
 		switch ($group) {
 			case 'day':
-				$sql = "SELECT COUNT(DISTINCT YEAR(date_added), MONTH(date_added), DAY(date_added)) AS total FROM `" . DB_PREFIX . "order`";
+			$sql = "SELECT COUNT(DISTINCT YEAR(date_added), MONTH(date_added), DAY(date_added)) AS total FROM `" . DB_PREFIX . "order`";
 
-				break;
+			break;
 
 			default:
 			case 'week':
@@ -276,9 +276,9 @@ class ModelExtensionDashboardSale extends Model {
 
 		switch ($group) {
 			case 'day':
-				$sql .= " GROUP BY YEAR(o.date_added), MONTH(o.date_added), DAY(o.date_added), ot.title";
+			$sql .= " GROUP BY YEAR(o.date_added), MONTH(o.date_added), DAY(o.date_added), ot.title";
 
-				break;
+			break;
 
 			default:
 			case 'week':
@@ -323,9 +323,9 @@ class ModelExtensionDashboardSale extends Model {
 
 		switch ($group) {
 			case 'day':
-				$sql = "SELECT COUNT(DISTINCT YEAR(o.date_added), MONTH(o.date_added), DAY(o.date_added), ot.title) AS total FROM `" . DB_PREFIX . "order` o";
+			$sql = "SELECT COUNT(DISTINCT YEAR(o.date_added), MONTH(o.date_added), DAY(o.date_added), ot.title) AS total FROM `" . DB_PREFIX . "order` o";
 
-				break;
+			break;
 
 			default:
 			case 'week':
@@ -390,9 +390,9 @@ class ModelExtensionDashboardSale extends Model {
 
 		switch ($group) {
 			case 'day':
-				$sql .= " GROUP BY YEAR(o.date_added), MONTH(o.date_added), DAY(o.date_added), ot.title";
+			$sql .= " GROUP BY YEAR(o.date_added), MONTH(o.date_added), DAY(o.date_added), ot.title";
 
-				break;
+			break;
 
 			default:
 			case 'week':
@@ -437,9 +437,9 @@ class ModelExtensionDashboardSale extends Model {
 
 		switch ($group) {
 			case 'day':
-				$sql = "SELECT COUNT(DISTINCT YEAR(o.date_added), MONTH(o.date_added), DAY(o.date_added), ot.title) AS total FROM `" . DB_PREFIX . "order` o";
+			$sql = "SELECT COUNT(DISTINCT YEAR(o.date_added), MONTH(o.date_added), DAY(o.date_added), ot.title) AS total FROM `" . DB_PREFIX . "order` o";
 
-				break;
+			break;
 
 			default:
 			case 'week':
