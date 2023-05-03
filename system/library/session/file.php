@@ -1,5 +1,7 @@
 <?php
+
 namespace Session;
+
 class File {
 	private $directory;
 

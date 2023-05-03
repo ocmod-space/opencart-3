@@ -1,4 +1,5 @@
 <?php
+
 class ModelExtensionTotalShipping extends Model {
 	public function getTotal($total) {
 		if ($this->cart->hasShipping() && isset($this->session->data['shipping_method'])) {

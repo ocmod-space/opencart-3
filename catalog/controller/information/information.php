@@ -1,4 +1,5 @@
 <?php
+
 class ControllerInformationInformation extends Controller {
 	public function index() {
 		$this->load->language('information/information');
@@ -27,7 +28,7 @@ class ControllerInformationInformation extends Controller {
 
 			$data['breadcrumbs'][] = array(
 				'text' => $information_info['title'],
-				'href' => $this->url->link('information/information', 'information_id=' .  $information_id)
+				'href' => $this->url->link('information/information', 'information_id=' . $information_id)
 			);
 
 			$data['heading_title'] = $information_info['title'];

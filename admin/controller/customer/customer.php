@@ -1,4 +1,5 @@
 <?php
+
 class ControllerCustomerCustomer extends Controller {
 	private $error = array();
 
@@ -777,14 +778,14 @@ class ControllerCustomerCustomer extends Controller {
 				'sort_order'         => $custom_field['sort_order']
 			);
 
-			if($custom_field['type'] == 'file') {
-				if(isset($data['account_custom_field'][$custom_field['custom_field_id']])) {
+			if ($custom_field['type'] == 'file') {
+				if (isset($data['account_custom_field'][$custom_field['custom_field_id']])) {
 					$code = $data['account_custom_field'][$custom_field['custom_field_id']];
 
 					$upload_result = $this->model_tool_upload->getUploadByCode($code);
 
 					$data['account_custom_field'][$custom_field['custom_field_id']] = array();
-					if($upload_result) {
+					if ($upload_result) {
 						$data['account_custom_field'][$custom_field['custom_field_id']]['name'] = $upload_result['name'];
 						$data['account_custom_field'][$custom_field['custom_field_id']]['code'] = $upload_result['code'];
 					} else {
@@ -793,14 +794,14 @@ class ControllerCustomerCustomer extends Controller {
 					}
 				}
 
-				foreach($data['addresses'] as $address_id => $address) {
-					if(isset($address['custom_field'][$custom_field['custom_field_id']])) {
+				foreach ($data['addresses'] as $address_id => $address) {
+					if (isset($address['custom_field'][$custom_field['custom_field_id']])) {
 						$code = $address['custom_field'][$custom_field['custom_field_id']];
 
 						$upload_result = $this->model_tool_upload->getUploadByCode($code);
-						
+
 						$data['addresses'][$address_id]['custom_field'][$custom_field['custom_field_id']] = array();
-						if($upload_result) {
+						if ($upload_result) {
 							$data['addresses'][$address_id]['custom_field'][$custom_field['custom_field_id']]['name'] = $upload_result['name'];
 							$data['addresses'][$address_id]['custom_field'][$custom_field['custom_field_id']]['code'] = $upload_result['code'];
 						} else {
@@ -1087,7 +1088,7 @@ class ControllerCustomerCustomer extends Controller {
 						$this->error['address'][$key]['custom_field'][$custom_field['custom_field_id']] = sprintf($this->language->get('error_custom_field'), $custom_field['name']);
 					} elseif (($custom_field['location'] == 'address') && ($custom_field['type'] == 'text') && !empty($custom_field['validation']) && !filter_var($value['custom_field'][$custom_field['custom_field_id']], FILTER_VALIDATE_REGEXP, array('options' => array('regexp' => $custom_field['validation'])))) {
 						$this->error['address'][$key]['custom_field'][$custom_field['custom_field_id']] = sprintf($this->language->get('error_custom_field'), $custom_field['name']);
-                    }
+					}
 				}
 			}
 		}

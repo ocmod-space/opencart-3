@@ -1,4 +1,5 @@
 <?php
+
 class ModelSettingStore extends Model {
 	public function addStore($data) {
 		$this->db->query("INSERT INTO " . DB_PREFIX . "store SET name = '" . $this->db->escape($data['config_name']) . "', `url` = '" . $this->db->escape($data['config_url']) . "', `ssl` = '" . $this->db->escape($data['config_ssl']) . "'");
@@ -97,7 +98,7 @@ class ModelSettingStore extends Model {
 
 		$checkout_query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "setting WHERE `key` = 'config_checkout_id' AND `value` = '" . (int)$information_id . "' AND store_id != '0'");
 
-		return ($account_query->row['total'] + $checkout_query->row['total']);
+		return $account_query->row['total'] + $checkout_query->row['total'];
 	}
 
 	public function getTotalStoresByOrderStatusId($order_status_id) {

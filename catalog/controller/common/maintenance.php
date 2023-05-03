@@ -1,4 +1,5 @@
 <?php
+
 class ControllerCommonMaintenance extends Controller {
 	public function index() {
 		$this->load->language('common/maintenance');

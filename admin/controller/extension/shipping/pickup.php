@@ -1,4 +1,5 @@
 <?php
+
 class ControllerExtensionShippingPickup extends Controller {
 	private $error = array();
 

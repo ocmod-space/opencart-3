@@ -1,4 +1,5 @@
 <?php
+
 class ControllerSettingStore extends Controller {
 	private $error = array();
 

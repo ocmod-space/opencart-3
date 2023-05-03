@@ -1,4 +1,5 @@
 <?php
+
 class ControllerMarketingMarketing extends Controller {
 	private $error = array();
 

@@ -1,4 +1,5 @@
 <?php
+
 class ControllerCustomerCustomerGroup extends Controller {
 	private $error = array();
 

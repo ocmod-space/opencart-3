@@ -1,4 +1,5 @@
 <?php
+
 class ControllerExtensionModuleFeatured extends Controller {
 	private $error = array();
 

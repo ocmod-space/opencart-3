@@ -1,4 +1,5 @@
 <?php
+
 class ControllerExtensionShippingFlat extends Controller {
 	private $error = array();
 

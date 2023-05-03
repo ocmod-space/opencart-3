@@ -1,4 +1,5 @@
 <?php
+
 class ModelCatalogOption extends Model {
 	public function addOption($data) {
 		$this->db->query("INSERT INTO `" . DB_PREFIX . "option` SET type = '" . $this->db->escape($data['type']) . "', sort_order = '" . (int)$data['sort_order'] . "'");
@@ -50,7 +51,6 @@ class ModelCatalogOption extends Model {
 					$this->db->query("INSERT INTO " . DB_PREFIX . "option_value_description SET option_value_id = '" . (int)$option_value_id . "', language_id = '" . (int)$language_id . "', option_id = '" . (int)$option_id . "', name = '" . $this->db->escape($option_value_description['name']) . "'");
 				}
 			}
-
 		}
 	}
 

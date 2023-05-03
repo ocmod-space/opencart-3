@@ -1,4 +1,5 @@
 <?php
+
 class ModelLocalisationReturnReason extends Model {
 	public function addReturnReason($data) {
 		foreach ($data['return_reason'] as $language_id => $value) {
@@ -12,7 +13,7 @@ class ModelLocalisationReturnReason extends Model {
 		}
 
 		$this->cache->delete('return_reason');
-		
+
 		return $return_reason_id;
 	}
 

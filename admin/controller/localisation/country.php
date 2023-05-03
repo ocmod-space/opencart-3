@@ -1,4 +1,5 @@
 <?php
+
 class ControllerLocalisationCountry extends Controller {
 	private $error = array();
 
@@ -409,7 +410,7 @@ class ControllerLocalisationCountry extends Controller {
 
 		return !$this->error;
 	}
-	
+
 	public function country() {
 		$json = array();
 
@@ -434,5 +435,5 @@ class ControllerLocalisationCountry extends Controller {
 
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));
-	}	
+	}
 }

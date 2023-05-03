@@ -1,4 +1,5 @@
 <?php
+
 class ControllerExtensionPaymentCod extends Controller {
 	private $error = array();
 

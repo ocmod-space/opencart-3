@@ -1,4 +1,5 @@
 <?php
+
 class ControllerCommonDashboard extends Controller {
 	public function index() {
 		$this->load->language('common/dashboard');
@@ -77,7 +78,7 @@ class ControllerCommonDashboard extends Controller {
 		}
 
 		if (!empty($column)) {
-    			$data['rows'][] = $column;
+			$data['rows'][] = $column;
 		}
 
 		if (DIR_STORAGE == DIR_SYSTEM . 'storage/') {

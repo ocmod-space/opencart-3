@@ -1,4 +1,5 @@
 <?php
+
 class ControllerCustomerCustomerApproval extends Controller {
 	public function index() {
 		$this->load->language('customer/customer_approval');
@@ -72,7 +73,7 @@ class ControllerCustomerCustomerApproval extends Controller {
 			'text' => $this->language->get('heading_title'),
 			'href' => $this->url->link('customer/customer_approval', 'user_token=' . $this->session->data['user_token'], true)
 		);
-		
+
 		$data['filter_name'] = $filter_name;
 		$data['filter_email'] = $filter_email;
 		$data['filter_customer_group_id'] = $filter_customer_group_id;

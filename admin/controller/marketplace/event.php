@@ -1,7 +1,8 @@
 <?php
+
 class ControllerMarketplaceEvent extends Controller {
 	private $error = array();
-	
+
 	public function index() {
 		$this->load->language('marketplace/event');
 
@@ -75,7 +76,7 @@ class ControllerMarketplaceEvent extends Controller {
 
 		$this->getList();
 	}
-	
+
 	public function delete() {
 		$this->load->language('marketplace/event');
 
@@ -108,8 +109,8 @@ class ControllerMarketplaceEvent extends Controller {
 		}
 
 		$this->getList();
-	}	
-	
+	}
+
 	public function getList() {
 		if (isset($this->request->get['sort'])) {
 			$sort = $this->request->get['sort'];

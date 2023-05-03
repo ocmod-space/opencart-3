@@ -1,4 +1,5 @@
 <?php
+
 class ControllerLocalisationStockStatus extends Controller {
 	private $error = array();
 

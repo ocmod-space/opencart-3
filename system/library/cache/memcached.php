@@ -1,10 +1,12 @@
 <?php
+
 namespace Cache;
+
 class Memcached {
 	private $expire;
 	private $memcached;
 
-	const CACHEDUMP_LIMIT = 9999;
+	public const CACHEDUMP_LIMIT = 9999;
 
 	public function __construct($expire) {
 		$this->expire = $expire;

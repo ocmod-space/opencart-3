@@ -1,4 +1,5 @@
 <?php
+
 class ControllerInstallStep2 extends Controller {
 	private $error = array();
 
@@ -71,7 +72,7 @@ class ControllerInstallStep2 extends Controller {
 		} else {
 			$data['error_admin_config'] = '';
 		}
- 
+
 		if (!is_writable(DIR_OPENCART . 'image/')) {
 			$data['error_image'] = $this->language->get('error_unwritable');
 		} else {
@@ -180,8 +181,8 @@ class ControllerInstallStep2 extends Controller {
 		}
 
 		$db = array(
-			'mysqli', 
-			'pdo', 
+			'mysqli',
+			'pdo',
 			'pgsql'
 		);
 

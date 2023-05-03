@@ -1,4 +1,5 @@
 <?php
+
 class ControllerInformationContact extends Controller {
 	private $error = array();
 
@@ -82,7 +83,7 @@ class ControllerInformationContact extends Controller {
 
 		$this->load->model('localisation/location');
 
-		foreach((array)$this->config->get('config_location') as $location_id) {
+		foreach ((array)$this->config->get('config_location') as $location_id) {
 			$location_info = $this->model_localisation_location->getLocation($location_id);
 
 			if ($location_info) {
@@ -183,7 +184,7 @@ class ControllerInformationContact extends Controller {
 			'href' => $this->url->link('information/contact')
 		);
 
- 		$data['text_message'] = $this->language->get('text_message'); 
+		$data['text_message'] = $this->language->get('text_message');
 
 		$data['continue'] = $this->url->link('common/home');
 

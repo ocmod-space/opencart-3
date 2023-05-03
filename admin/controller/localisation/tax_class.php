@@ -1,4 +1,5 @@
 <?php
+
 class ControllerLocalisationTaxClass extends Controller {
 	private $error = array();
 

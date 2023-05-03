@@ -1,5 +1,7 @@
 <?php
+
 namespace DB;
+
 class MySQLi {
 	private $connection;
 
@@ -25,7 +27,7 @@ class MySQLi {
 
 		if (!$this->connection->errno) {
 			if ($query instanceof \mysqli_result) {
-				$data = [];
+				$data = array();
 
 				while ($row = $query->fetch_assoc()) {
 					$data[] = $row;
@@ -33,7 +35,7 @@ class MySQLi {
 
 				$result = new \stdClass();
 				$result->num_rows = $query->num_rows;
-				$result->row = isset($data[0]) ? $data[0] : [];
+				$result->row = isset($data[0]) ? $data[0] : array();
 				$result->rows = $data;
 
 				$query->close();
@@ -45,7 +47,7 @@ class MySQLi {
 				return true;
 			}
 		} else {
-			throw new \Exception('Error: ' . $this->connection->error  . '<br />Error No: ' . $this->connection->errno . '<br />' . $sql);
+			throw new \Exception('Error: ' . $this->connection->error . '<br />Error No: ' . $this->connection->errno . '<br />' . $sql);
 		}
 	}
 
@@ -70,10 +72,9 @@ class MySQLi {
 	}
 
 	/**
-	 * __destruct
+	 * __destruct.
 	 *
 	 * Closes the DB connection when this object is destroyed.
-	 *
 	 */
 	public function __destruct() {
 		if ($this->connection) {

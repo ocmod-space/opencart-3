@@ -1,4 +1,5 @@
 <?php
+
 class ControllerExtensionTotalShipping extends Controller {
 	private $error = array();
 

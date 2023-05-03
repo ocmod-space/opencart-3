@@ -1,4 +1,5 @@
 <?php
+
 class ControllerExtensionModuleFeatured extends Controller {
 	public function index($setting) {
 		$this->load->language('extension/module/featured');
@@ -39,7 +40,7 @@ class ControllerExtensionModuleFeatured extends Controller {
 						$special = false;
 						$tax_price = (float)$product_info['price'];
 					}
-		
+
 					if ($this->config->get('config_tax')) {
 						$tax = $this->currency->format($tax_price, $this->session->data['currency']);
 					} else {

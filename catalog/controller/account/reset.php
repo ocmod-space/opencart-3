@@ -1,4 +1,5 @@
 <?php
+
 class ControllerAccountReset extends Controller {
 	private $error = array();
 

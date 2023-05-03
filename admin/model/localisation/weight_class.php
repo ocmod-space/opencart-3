@@ -1,4 +1,5 @@
 <?php
+
 class ModelLocalisationWeightClass extends Model {
 	public function addWeightClass($data) {
 		$this->db->query("INSERT INTO " . DB_PREFIX . "weight_class SET value = '" . (float)$data['value'] . "'");
@@ -10,7 +11,7 @@ class ModelLocalisationWeightClass extends Model {
 		}
 
 		$this->cache->delete('weight_class');
-		
+
 		return $weight_class_id;
 	}
 

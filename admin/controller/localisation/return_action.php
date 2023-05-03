@@ -1,4 +1,5 @@
 <?php
+
 class ControllerLocalisationReturnAction extends Controller {
 	private $error = array();
 

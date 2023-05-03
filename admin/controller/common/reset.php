@@ -1,4 +1,5 @@
 <?php
+
 class ControllerCommonReset extends Controller {
 	private $error = array();
 

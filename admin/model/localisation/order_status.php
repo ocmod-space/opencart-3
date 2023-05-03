@@ -1,4 +1,5 @@
 <?php
+
 class ModelLocalisationOrderStatus extends Model {
 	public function addOrderStatus($data) {
 		foreach ($data['order_status'] as $language_id => $value) {
@@ -12,7 +13,7 @@ class ModelLocalisationOrderStatus extends Model {
 		}
 
 		$this->cache->delete('order_status');
-		
+
 		return $order_status_id;
 	}
 

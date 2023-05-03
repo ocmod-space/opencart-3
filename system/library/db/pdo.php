@@ -1,8 +1,10 @@
 <?php
+
 namespace DB;
+
 final class PDO {
-	private $connection = null;
-	private $statement = null;
+	private $connection;
+	private $statement;
 
 	public function __construct($hostname, $username, $password, $database, $port = '3306') {
 		try {
@@ -50,7 +52,7 @@ final class PDO {
 
 	public function query($sql, $params = array()) {
 		$this->statement = $this->connection->prepare($sql);
-		
+
 		$result = false;
 
 		try {
@@ -77,12 +79,13 @@ final class PDO {
 			$result->row = array();
 			$result->rows = array();
 			$result->num_rows = 0;
+
 			return $result;
 		}
 	}
 
 	public function escape($value) {
-		return str_replace(array("\\", "\0", "\n", "\r", "\x1a", "'", '"'), array("\\\\", "\\0", "\\n", "\\r", "\Z", "\'", '\"'), $value);
+		return str_replace(array("\\", "\0", "\n", "\r", "\x1a", "'", '"'), array("\\\\", "\\0", "\\n", "\\r", "\\Z", "\\'", '\"'), $value);
 	}
 
 	public function countAffected() {
@@ -96,7 +99,7 @@ final class PDO {
 	public function getLastId() {
 		return $this->connection->lastInsertId();
 	}
-	
+
 	public function isConnected() {
 		if ($this->connection) {
 			return true;
@@ -104,7 +107,7 @@ final class PDO {
 			return false;
 		}
 	}
-	
+
 	public function __destruct() {
 		$this->connection = null;
 	}

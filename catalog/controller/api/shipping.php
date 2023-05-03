@@ -1,4 +1,5 @@
 <?php
+
 class ControllerApiShipping extends Controller {
 	public function address() {
 		$this->load->language('api/shipping');
@@ -135,7 +136,7 @@ class ControllerApiShipping extends Controller {
 				}
 			}
 		}
-		
+
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));
 	}

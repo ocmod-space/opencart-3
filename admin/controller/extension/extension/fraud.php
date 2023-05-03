@@ -1,4 +1,5 @@
 <?php
+
 class ControllerExtensionExtensionFraud extends Controller {
 	private $error = array();
 
@@ -45,7 +46,7 @@ class ControllerExtensionExtensionFraud extends Controller {
 
 			$this->session->data['success'] = $this->language->get('text_success');
 		}
-		
+
 		$this->getList();
 	}
 
@@ -75,7 +76,7 @@ class ControllerExtensionExtensionFraud extends Controller {
 		}
 
 		$data['extensions'] = array();
-		
+
 		// Compatibility code for old extension folders
 		$files = glob(DIR_APPLICATION . 'controller/extension/fraud/*.php');
 
@@ -97,7 +98,7 @@ class ControllerExtensionExtensionFraud extends Controller {
 		}
 
 		$data['promotion'] = $this->load->controller('extension/extension/promotion');
-		
+
 		$this->response->setOutput($this->load->view('extension/extension/fraud', $data));
 	}
 

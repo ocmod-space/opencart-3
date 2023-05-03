@@ -1,4 +1,5 @@
 <?php
+
 class ControllerAffiliateRegister extends Controller {
 	private $error = array();
 
@@ -10,7 +11,7 @@ class ControllerAffiliateRegister extends Controller {
 		$this->load->language('affiliate/register');
 
 		$this->document->setTitle($this->language->get('heading_title'));
-		
+
 		$this->document->addScript('catalog/view/javascript/jquery/datetimepicker/moment/moment.min.js');
 		$this->document->addScript('catalog/view/javascript/jquery/datetimepicker/moment/moment-with-locales.min.js');
 		$this->document->addScript('catalog/view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.js');
@@ -91,13 +92,13 @@ class ControllerAffiliateRegister extends Controller {
 		} else {
 			$data['error_confirm'] = '';
 		}
-		
+
 		if (isset($this->error['custom_field'])) {
 			$data['error_custom_field'] = $this->error['custom_field'];
 		} else {
 			$data['error_custom_field'] = array();
 		}
-		
+
 		if (isset($this->error['cheque'])) {
 			$data['error_cheque'] = $this->error['cheque'];
 		} else {
@@ -121,7 +122,7 @@ class ControllerAffiliateRegister extends Controller {
 		} else {
 			$data['error_bank_account_number'] = '';
 		}
-				
+
 		$data['action'] = $this->url->link('affiliate/register', '', true);
 
 		$data['customer_groups'] = array();
@@ -143,7 +144,7 @@ class ControllerAffiliateRegister extends Controller {
 		} else {
 			$data['customer_group_id'] = $this->config->get('config_affiliate_group_id');
 		}
-		
+
 		if (isset($this->request->post['firstname'])) {
 			$data['firstname'] = $this->request->post['firstname'];
 		} else {
@@ -185,13 +186,13 @@ class ControllerAffiliateRegister extends Controller {
 			} else {
 				$account_custom_field = array();
 			}
-			
+
 			if (isset($this->request->post['custom_field']['affiliate'])) {
 				$affiliate_custom_field = $this->request->post['custom_field']['affiliate'];
 			} else {
 				$affiliate_custom_field = array();
 			}
-			
+
 			$data['register_custom_field'] = $account_custom_field + $affiliate_custom_field;
 		} else {
 			$data['register_custom_field'] = array();
@@ -202,7 +203,7 @@ class ControllerAffiliateRegister extends Controller {
 		} else {
 			$data['website'] = '';
 		}
-		
+
 		if (isset($this->request->post['tax'])) {
 			$data['tax'] = $this->request->post['tax'];
 		} else {
@@ -338,13 +339,13 @@ class ControllerAffiliateRegister extends Controller {
 		$this->load->model('account/custom_field');
 
 		$custom_fields = $this->model_account_custom_field->getCustomFields($customer_group_id);
-		
+
 		foreach ($custom_fields as $custom_field) {
-            if ($custom_field['required'] && empty($this->request->post['custom_field'][$custom_field['location']][$custom_field['custom_field_id']])) {
+			if ($custom_field['required'] && empty($this->request->post['custom_field'][$custom_field['location']][$custom_field['custom_field_id']])) {
 				$this->error['custom_field'][$custom_field['custom_field_id']] = sprintf($this->language->get('error_custom_field'), $custom_field['name']);
 			} elseif (($custom_field['type'] == 'text') && !empty($custom_field['validation']) && !filter_var($this->request->post['custom_field'][$custom_field['location']][$custom_field['custom_field_id']], FILTER_VALIDATE_REGEXP, array('options' => array('regexp' => $custom_field['validation'])))) {
-            	$this->error['custom_field'][$custom_field['custom_field_id']] = sprintf($this->language->get('error_custom_field'), $custom_field['name']);
-            }
+				$this->error['custom_field'][$custom_field['custom_field_id']] = sprintf($this->language->get('error_custom_field'), $custom_field['name']);
+			}
 		}
 
 		if ((utf8_strlen(html_entity_decode($this->request->post['password'], ENT_QUOTES, 'UTF-8')) < 4) || (utf8_strlen(html_entity_decode($this->request->post['password'], ENT_QUOTES, 'UTF-8')) > 40)) {
@@ -354,7 +355,7 @@ class ControllerAffiliateRegister extends Controller {
 		if ($this->request->post['confirm'] != $this->request->post['password']) {
 			$this->error['confirm'] = $this->language->get('error_confirm');
 		}
-		
+
 		if (($this->request->post['payment'] == 'cheque') && !$this->request->post['cheque']) {
 			$this->error['cheque'] = $this->language->get('error_cheque');
 		} elseif (($this->request->post['payment'] == 'paypal') && ((utf8_strlen($this->request->post['paypal']) > 96) || !filter_var($this->request->post['paypal'], FILTER_VALIDATE_EMAIL))) {
@@ -363,12 +364,12 @@ class ControllerAffiliateRegister extends Controller {
 			if (!$this->request->post['bank_account_name']) {
 				$this->error['bank_account_name'] = $this->language->get('error_bank_account_name');
 			}
-	
+
 			if (!$this->request->post['bank_account_number']) {
 				$this->error['bank_account_number'] = $this->language->get('error_bank_account_number');
 			}
 		}
-			
+
 		// Captcha
 		if ($this->config->get('captcha_' . $this->config->get('config_captcha') . '_status') && in_array('register', (array)$this->config->get('config_captcha_page'))) {
 			$captcha = $this->load->controller('extension/captcha/' . $this->config->get('config_captcha') . '/validate');

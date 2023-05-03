@@ -1,4 +1,5 @@
 <?php
+
 class ControllerCheckoutConfirm extends Controller {
 	public function index() {
 		$redirect = '';
@@ -113,7 +114,7 @@ class ControllerCheckoutConfirm extends Controller {
 					$order_data['store_url'] = HTTP_SERVER;
 				}
 			}
-			
+
 			$this->load->model('account/customer');
 
 			if ($this->customer->isLogged()) {

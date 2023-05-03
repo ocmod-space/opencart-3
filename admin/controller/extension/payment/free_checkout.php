@@ -1,4 +1,5 @@
 <?php
+
 class ControllerExtensionPaymentFreeCheckout extends Controller {
 	private $error = array();
 

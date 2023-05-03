@@ -1,4 +1,5 @@
 <?php
+
 class ControllerToolUpload extends Controller {
 	private $error = array();
 
@@ -131,8 +132,8 @@ class ControllerToolUpload extends Controller {
 		$data['uploads'] = array();
 
 		$filter_data = array(
-			'filter_name'	    => $filter_name,
-			'filter_date_added'	=> $filter_date_added,
+			'filter_name'       => $filter_name,
+			'filter_date_added' => $filter_date_added,
 			'sort'              => $sort,
 			'order'             => $order,
 			'start'             => ($page - 1) * $this->config->get('config_limit_admin'),

@@ -1,4 +1,5 @@
 <?php
+
 class ModelSaleRecurring extends Model {
 	public function getRecurrings($data) {
 		$sql = "SELECT `or`.order_recurring_id, `or`.order_id, `or`.reference, `or`.`status`, `or`.`date_added`, CONCAT(`o`.firstname, ' ', `o`.lastname) AS customer FROM `" . DB_PREFIX . "order_recurring` `or` LEFT JOIN `" . DB_PREFIX . "order` `o` ON (`or`.order_id = `o`.order_id)";
@@ -31,8 +32,8 @@ class ModelSaleRecurring extends Model {
 
 		if ($implode) {
 			$sql .= " WHERE " . implode(" AND ", $implode);
-		} 
-			 
+		}
+
 		$sort_data = array(
 			'or.order_recurring_id',
 			'or.order_id',
@@ -86,36 +87,57 @@ class ModelSaleRecurring extends Model {
 			switch ($result['type']) {
 				case 0:
 					$type = $this->language->get('text_transaction_date_added');
+
 					break;
+
 				case 1:
 					$type = $this->language->get('text_transaction_payment');
+
 					break;
+
 				case 2:
 					$type = $this->language->get('text_transaction_outstanding_payment');
+
 					break;
+
 				case 3:
 					$type = $this->language->get('text_transaction_skipped');
+
 					break;
+
 				case 4:
 					$type = $this->language->get('text_transaction_failed');
+
 					break;
+
 				case 5:
 					$type = $this->language->get('text_transaction_cancelled');
+
 					break;
+
 				case 6:
 					$type = $this->language->get('text_transaction_suspended');
+
 					break;
+
 				case 7:
 					$type = $this->language->get('text_transaction_suspended_failed');
+
 					break;
+
 				case 8:
 					$type = $this->language->get('text_transaction_outstanding_failed');
+
 					break;
+
 				case 9:
 					$type = $this->language->get('text_transaction_expired');
+
 					break;
+
 				default:
 					$type = '';
+
 					break;
 			}
 
@@ -133,33 +155,46 @@ class ModelSaleRecurring extends Model {
 		switch ($status) {
 			case 1:
 				$result = $this->language->get('text_status_inactive');
+
 				break;
+
 			case 2:
 				$result = $this->language->get('text_status_active');
+
 				break;
+
 			case 3:
 				$result = $this->language->get('text_status_suspended');
+
 				break;
+
 			case 4:
 				$result = $this->language->get('text_status_cancelled');
+
 				break;
+
 			case 5:
 				$result = $this->language->get('text_status_expired');
+
 				break;
+
 			case 6:
 				$result = $this->language->get('text_status_pending');
+
 				break;
+
 			default:
 				$result = '';
+
 				break;
 		}
 
 		return $result;
 	}
-	
+
 	public function getTotalRecurrings($data) {
 		$sql = "SELECT COUNT(*) AS `total` FROM `" . DB_PREFIX . "order_recurring` `or` LEFT JOIN `" . DB_PREFIX . "order` o ON (`or`.order_id = `o`.order_id)";
-		
+
 		$implode = array();
 
 		if (!empty($data['filter_order_recurring_id'])) {
@@ -185,13 +220,13 @@ class ModelSaleRecurring extends Model {
 		if (!empty($data['filter_date_added'])) {
 			$implode[] .= "DATE(or.date_added) = DATE('" . $this->db->escape($data['filter_date_added']) . "')";
 		}
-		
+
 		if ($implode) {
 			$sql .= " WHERE " . implode(" AND ", $implode);
-		} 
-		
+		}
+
 		$query = $this->db->query($sql);
 
 		return $query->row['total'];
-	}	
+	}
 }

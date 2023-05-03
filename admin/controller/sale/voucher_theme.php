@@ -1,4 +1,5 @@
 <?php
+
 class ControllerSaleVoucherTheme extends Controller {
 	private $error = array();
 

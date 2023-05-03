@@ -1,4 +1,5 @@
 <?php
+
 class ControllerCommonSearch extends Controller {
 	public function index() {
 		$this->load->language('common/search');

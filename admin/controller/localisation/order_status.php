@@ -1,4 +1,5 @@
 <?php
+
 class ControllerLocalisationOrderStatus extends Controller {
 	private $error = array();
 

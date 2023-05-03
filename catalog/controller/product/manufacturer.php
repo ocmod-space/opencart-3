@@ -1,4 +1,5 @@
 <?php
+
 class ControllerProductManufacturer extends Controller {
 	public function index() {
 		$this->load->language('product/manufacturer');
@@ -171,7 +172,7 @@ class ControllerProductManufacturer extends Controller {
 					$special = false;
 					$tax_price = (float)$result['price'];
 				}
-	
+
 				if ($this->config->get('config_tax')) {
 					$tax = $this->currency->format($tax_price, $this->session->data['currency']);
 				} else {
@@ -278,7 +279,7 @@ class ControllerProductManufacturer extends Controller {
 
 			sort($limits);
 
-			foreach($limits as $value) {
+			foreach ($limits as $value) {
 				$data['limits'][] = array(
 					'text'  => $value,
 					'value' => $value,
@@ -304,7 +305,7 @@ class ControllerProductManufacturer extends Controller {
 			$pagination->total = $product_total;
 			$pagination->page = $page;
 			$pagination->limit = $limit;
-			$pagination->url = $this->url->link('product/manufacturer/info', 'manufacturer_id=' . $this->request->get['manufacturer_id'] .  $url . '&page={page}');
+			$pagination->url = $this->url->link('product/manufacturer/info', 'manufacturer_id=' . $this->request->get['manufacturer_id'] . $url . '&page={page}');
 
 			$data['pagination'] = $pagination->render();
 
@@ -316,7 +317,7 @@ class ControllerProductManufacturer extends Controller {
 			} else {
 				$this->document->addLink($this->url->link('product/manufacturer/info', 'manufacturer_id=' . $this->request->get['manufacturer_id'] . '&page=' . $page), 'canonical');
 			}
-			
+
 			if ($page > 1) {
 				$this->document->addLink($this->url->link('product/manufacturer/info', 'manufacturer_id=' . $this->request->get['manufacturer_id'] . (($page - 2) ? '&page=' . ($page - 1) : '')), 'prev');
 			}

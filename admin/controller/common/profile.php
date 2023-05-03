@@ -1,4 +1,5 @@
 <?php
+
 class ControllerCommonProfile extends Controller {
 	private $error = array();
 

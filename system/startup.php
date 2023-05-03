@@ -1,4 +1,5 @@
 <?php
+
 // Error Reporting
 error_reporting(E_ALL);
 
@@ -48,9 +49,9 @@ if ((isset($_SERVER['HTTPS']) && (($_SERVER['HTTPS'] == 'on') || ($_SERVER['HTTP
 // Modification Override
 function modification($filename) {
 	if (defined('DIR_CATALOG')) {
-		$file = DIR_MODIFICATION . 'admin/' .  substr($filename, strlen(DIR_APPLICATION));
+		$file = DIR_MODIFICATION . 'admin/' . substr($filename, strlen(DIR_APPLICATION));
 	} elseif (defined('DIR_OPENCART')) {
-		$file = DIR_MODIFICATION . 'install/' .  substr($filename, strlen(DIR_APPLICATION));
+		$file = DIR_MODIFICATION . 'install/' . substr($filename, strlen(DIR_APPLICATION));
 	} else {
 		$file = DIR_MODIFICATION . 'catalog/' . substr($filename, strlen(DIR_APPLICATION));
 	}
@@ -101,5 +102,5 @@ require_once(DIR_SYSTEM . 'helper/general.php');
 require_once(DIR_SYSTEM . 'helper/utf8.php');
 
 function start($application_config) {
-	require_once(DIR_SYSTEM . 'framework.php');	
+	require_once(DIR_SYSTEM . 'framework.php');
 }

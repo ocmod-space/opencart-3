@@ -1,4 +1,5 @@
 <?php
+
 class ControllerCommonFooter extends Controller {
 	public function index() {
 		$this->load->language('common/footer');
@@ -58,7 +59,7 @@ class ControllerCommonFooter extends Controller {
 
 		$data['scripts'] = $this->document->getScripts('footer');
 		$data['styles'] = $this->document->getStyles('footer');
-		
+
 		return $this->load->view('common/footer', $data);
 	}
 }

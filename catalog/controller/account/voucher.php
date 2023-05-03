@@ -1,4 +1,5 @@
 <?php
+
 class ControllerAccountVoucher extends Controller {
 	private $error = array();
 
@@ -104,7 +105,7 @@ class ControllerAccountVoucher extends Controller {
 		if (isset($this->request->post['from_name'])) {
 			$data['from_name'] = $this->request->post['from_name'];
 		} elseif ($this->customer->isLogged()) {
-			$data['from_name'] = $this->customer->getFirstName() . ' '  . $this->customer->getLastName();
+			$data['from_name'] = $this->customer->getFirstName() . ' ' . $this->customer->getLastName();
 		} else {
 			$data['from_name'] = '';
 		}

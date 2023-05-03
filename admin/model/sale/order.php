@@ -1,4 +1,5 @@
 <?php
+
 class ModelSaleOrder extends Model {
 	public function getOrder($order_id) {
 		$order_query = $this->db->query("SELECT *, (SELECT CONCAT(c.firstname, ' ', c.lastname) FROM " . DB_PREFIX . "customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM " . DB_PREFIX . "order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '" . (int)$this->config->get('config_language_id') . "') AS order_status FROM `" . DB_PREFIX . "order` o WHERE o.order_id = '" . (int)$order_id . "'");
@@ -47,7 +48,7 @@ class ModelSaleOrder extends Model {
 			foreach ($order_product_query->rows as $product) {
 				$reward += $product['reward'];
 			}
-			
+
 			$this->load->model('customer/customer');
 
 			$affiliate_info = $this->model_customer_customer->getCustomer($order_query->row['affiliate_id']);
@@ -255,7 +256,7 @@ class ModelSaleOrder extends Model {
 
 		return $query->rows;
 	}
-	
+
 	public function getTotalOrders($data = array()) {
 		$sql = "SELECT COUNT(*) AS total FROM `" . DB_PREFIX . "order`";
 
@@ -361,7 +362,7 @@ class ModelSaleOrder extends Model {
 
 		return $query->row['total'];
 	}
-	
+
 	public function getTotalSales($data = array()) {
 		$sql = "SELECT SUM(total) AS total FROM `" . DB_PREFIX . "order`";
 
@@ -407,7 +408,7 @@ class ModelSaleOrder extends Model {
 
 		return $query->row['total'];
 	}
-	
+
 	public function createInvoiceNo($order_id) {
 		$order_info = $this->getOrder($order_id);
 
@@ -451,7 +452,7 @@ class ModelSaleOrder extends Model {
 
 		return $query->row['total'];
 	}
-	
+
 	public function getEmailsByProductsOrdered($products, $start, $end) {
 		$implode = array();
 

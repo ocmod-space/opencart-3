@@ -1,4 +1,5 @@
 <?php
+
 class ControllerCatalogManufacturer extends Controller {
 	private $error = array();
 
@@ -398,7 +399,7 @@ class ControllerCatalogManufacturer extends Controller {
 
 		if ($this->request->post['manufacturer_seo_url']) {
 			$this->load->model('design/seo_url');
-			
+
 			foreach ($this->request->post['manufacturer_seo_url'] as $store_id => $language) {
 				foreach ($language as $language_id => $keyword) {
 					if (!empty($keyword)) {

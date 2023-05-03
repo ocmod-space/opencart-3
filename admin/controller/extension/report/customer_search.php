@@ -1,4 +1,5 @@
 <?php
+
 class ControllerExtensionReportCustomerSearch extends Controller {
 	public function index() {
 		$this->load->language('extension/report/customer_search');
@@ -60,7 +61,7 @@ class ControllerExtensionReportCustomerSearch extends Controller {
 
 		$this->response->setOutput($this->load->view('extension/report/customer_search_form', $data));
 	}
-	
+
 	protected function validate() {
 		if (!$this->user->hasPermission('modify', 'extension/report/customer_search')) {
 			$this->error['warning'] = $this->language->get('error_permission');
@@ -68,7 +69,7 @@ class ControllerExtensionReportCustomerSearch extends Controller {
 
 		return !$this->error;
 	}
-	
+
 	public function report() {
 		$this->load->language('extension/report/customer_search');
 
@@ -143,12 +144,12 @@ class ControllerExtensionReportCustomerSearch extends Controller {
 			}
 
 			$data['searches'][] = array(
-				'keyword'     => $result['keyword'],
-				'products'    => $result['products'],
-				'category'    => $category,
-				'customer'    => $customer,
-				'ip'          => $result['ip'],
-				'date_added'  => date($this->language->get('datetime_format'), strtotime($result['date_added']))
+				'keyword'    => $result['keyword'],
+				'products'   => $result['products'],
+				'category'   => $category,
+				'customer'   => $customer,
+				'ip'         => $result['ip'],
+				'date_added' => date($this->language->get('datetime_format'), strtotime($result['date_added']))
 			);
 		}
 

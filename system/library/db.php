@@ -1,30 +1,31 @@
 <?php
 /**
  * @package		OpenCart
+ *
  * @author		Daniel Kerr
  * @copyright	Copyright (c) 2005 - 2017, OpenCart, Ltd. (https://www.opencart.com/)
  * @license		https://opensource.org/licenses/GPL-3.0
- * @link		https://www.opencart.com
-*/
+ *
+ * @see		https://www.opencart.com
+ */
 
 /**
-* DB class
-*/
+ * DB class.
+ */
 class DB {
 	private $adaptor;
 
 	/**
-	 * Constructor
+	 * Constructor.
 	 *
-	 * @param	string	$adaptor
-	 * @param	string	$hostname
-	 * @param	string	$username
-     * @param	string	$password
-	 * @param	string	$database
-	 * @param	int		$port
-	 *
- 	*/
-	public function __construct($adaptor, $hostname, $username, $password, $database, $port = NULL) {
+	 * @param string $adaptor
+	 * @param string $hostname
+	 * @param string $username
+	 * @param string $password
+	 * @param string $database
+	 * @param int    $port
+	 */
+	public function __construct($adaptor, $hostname, $username, $password, $database, $port = null) {
 		$class = 'DB\\' . $adaptor;
 
 		if (class_exists($class)) {
@@ -35,50 +36,40 @@ class DB {
 	}
 
 	/**
-     * 
-     *
-     * @param	string	$sql
-	 * 
-	 * @return	array
-     */
+	 * @param string $sql
+	 *
+	 * @return array
+	 */
 	public function query($sql) {
 		return $this->adaptor->query($sql);
 	}
 
 	/**
-     * 
-     *
-     * @param	string	$value
-	 * 
-	 * @return	string
-     */
+	 * @param string $value
+	 *
+	 * @return string
+	 */
 	public function escape($value) {
 		return $this->adaptor->escape($value);
 	}
 
 	/**
-     * 
-	 * 
-	 * @return	int
-     */
+	 * @return int
+	 */
 	public function countAffected() {
 		return $this->adaptor->countAffected();
 	}
 
 	/**
-     * 
-	 * 
-	 * @return	int
-     */
+	 * @return int
+	 */
 	public function getLastId() {
 		return $this->adaptor->getLastId();
 	}
-	
+
 	/**
-     * 
-	 * 
-	 * @return	bool
-     */	
+	 * @return bool
+	 */
 	public function connected() {
 		return $this->adaptor->connected();
 	}

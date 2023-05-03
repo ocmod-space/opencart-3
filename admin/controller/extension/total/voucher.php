@@ -1,4 +1,5 @@
 <?php
+
 class ControllerExtensionTotalVoucher extends Controller {
 	private $error = array();
 

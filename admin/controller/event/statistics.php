@@ -1,4 +1,5 @@
 <?php
+
 class ControllerEventStatistics extends Controller {
 	// model/catalog/review/removeReview/after
 	public function removeReview(&$route, &$args, &$output) {

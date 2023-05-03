@@ -1,4 +1,5 @@
 <?php
+
 class ControllerCommonHeader extends Controller {
 	public function index() {
 		$data['title'] = $this->document->getTitle();
@@ -10,14 +11,14 @@ class ControllerCommonHeader extends Controller {
 		}
 
 		if ($this->request->server['HTTPS']) {
-            $server = HTTPS_CATALOG;
-        } else {
-            $server = HTTP_CATALOG;
-        }
+			$server = HTTPS_CATALOG;
+		} else {
+			$server = HTTP_CATALOG;
+		}
 
-        if (is_file(DIR_IMAGE . $this->config->get('config_icon'))) {
+		if (is_file(DIR_IMAGE . $this->config->get('config_icon'))) {
 			$this->document->addLink($server . 'image/' . $this->config->get('config_icon'), 'icon');
-        }
+		}
 
 		$data['description'] = $this->document->getDescription();
 		$data['keywords'] = $this->document->getKeywords();
@@ -51,7 +52,7 @@ class ControllerCommonHeader extends Controller {
 			if ($user_info) {
 				$data['firstname'] = $user_info['firstname'];
 				$data['lastname'] = $user_info['lastname'];
-				$data['username']  = $user_info['username'];
+				$data['username'] = $user_info['username'];
 				$data['user_group'] = $user_info['user_group'];
 
 				if (is_file(DIR_IMAGE . $user_info['image'])) {

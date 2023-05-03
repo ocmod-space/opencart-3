@@ -1,4 +1,5 @@
 <?php
+
 class ModelLocalisationReturnStatus extends Model {
 	public function addReturnStatus($data) {
 		foreach ($data['return_status'] as $language_id => $value) {
@@ -12,7 +13,7 @@ class ModelLocalisationReturnStatus extends Model {
 		}
 
 		$this->cache->delete('return_status');
-		
+
 		return $return_status_id;
 	}
 

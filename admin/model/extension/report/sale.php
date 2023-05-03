@@ -1,4 +1,5 @@
 <?php
+
 class ModelExtensionReportSale extends Model {
 	public function getTotalSales($data = array()) {
 		$sql = "SELECT SUM(total) AS total FROM `" . DB_PREFIX . "order` WHERE order_status_id > '0'";
@@ -159,19 +160,26 @@ class ModelExtensionReportSale extends Model {
 			$group = 'week';
 		}
 
-		switch($group) {
-			case 'day';
+		switch ($group) {
+			case 'day':
 				$sql .= " GROUP BY YEAR(o.date_added), MONTH(o.date_added), DAY(o.date_added)";
+
 				break;
+
 			default:
 			case 'week':
 				$sql .= " GROUP BY YEAR(o.date_added), WEEK(o.date_added)";
+
 				break;
+
 			case 'month':
 				$sql .= " GROUP BY YEAR(o.date_added), MONTH(o.date_added)";
+
 				break;
+
 			case 'year':
 				$sql .= " GROUP BY YEAR(o.date_added)";
+
 				break;
 		}
 
@@ -201,19 +209,26 @@ class ModelExtensionReportSale extends Model {
 			$group = 'week';
 		}
 
-		switch($group) {
-			case 'day';
+		switch ($group) {
+			case 'day':
 				$sql = "SELECT COUNT(DISTINCT YEAR(date_added), MONTH(date_added), DAY(date_added)) AS total FROM `" . DB_PREFIX . "order`";
+
 				break;
+
 			default:
 			case 'week':
 				$sql = "SELECT COUNT(DISTINCT YEAR(date_added), WEEK(date_added)) AS total FROM `" . DB_PREFIX . "order`";
+
 				break;
+
 			case 'month':
 				$sql = "SELECT COUNT(DISTINCT YEAR(date_added), MONTH(date_added)) AS total FROM `" . DB_PREFIX . "order`";
+
 				break;
+
 			case 'year':
 				$sql = "SELECT COUNT(DISTINCT YEAR(date_added)) AS total FROM `" . DB_PREFIX . "order`";
+
 				break;
 		}
 
@@ -259,19 +274,26 @@ class ModelExtensionReportSale extends Model {
 			$group = 'week';
 		}
 
-		switch($group) {
-			case 'day';
+		switch ($group) {
+			case 'day':
 				$sql .= " GROUP BY YEAR(o.date_added), MONTH(o.date_added), DAY(o.date_added), ot.title";
+
 				break;
+
 			default:
 			case 'week':
 				$sql .= " GROUP BY YEAR(o.date_added), WEEK(o.date_added), ot.title";
+
 				break;
+
 			case 'month':
 				$sql .= " GROUP BY YEAR(o.date_added), MONTH(o.date_added), ot.title";
+
 				break;
+
 			case 'year':
 				$sql .= " GROUP BY YEAR(o.date_added), ot.title";
+
 				break;
 		}
 
@@ -299,19 +321,26 @@ class ModelExtensionReportSale extends Model {
 			$group = 'week';
 		}
 
-		switch($group) {
-			case 'day';
+		switch ($group) {
+			case 'day':
 				$sql = "SELECT COUNT(DISTINCT YEAR(o.date_added), MONTH(o.date_added), DAY(o.date_added), ot.title) AS total FROM `" . DB_PREFIX . "order` o";
+
 				break;
+
 			default:
 			case 'week':
 				$sql = "SELECT COUNT(DISTINCT YEAR(o.date_added), WEEK(o.date_added), ot.title) AS total FROM `" . DB_PREFIX . "order` o";
+
 				break;
+
 			case 'month':
 				$sql = "SELECT COUNT(DISTINCT YEAR(o.date_added), MONTH(o.date_added), ot.title) AS total FROM `" . DB_PREFIX . "order` o";
+
 				break;
+
 			case 'year':
 				$sql = "SELECT COUNT(DISTINCT YEAR(o.date_added), ot.title) AS total FROM `" . DB_PREFIX . "order` o";
+
 				break;
 		}
 
@@ -359,19 +388,26 @@ class ModelExtensionReportSale extends Model {
 			$group = 'week';
 		}
 
-		switch($group) {
-			case 'day';
+		switch ($group) {
+			case 'day':
 				$sql .= " GROUP BY YEAR(o.date_added), MONTH(o.date_added), DAY(o.date_added), ot.title";
+
 				break;
+
 			default:
 			case 'week':
 				$sql .= " GROUP BY YEAR(o.date_added), WEEK(o.date_added), ot.title";
+
 				break;
+
 			case 'month':
 				$sql .= " GROUP BY YEAR(o.date_added), MONTH(o.date_added), ot.title";
+
 				break;
+
 			case 'year':
 				$sql .= " GROUP BY YEAR(o.date_added), ot.title";
+
 				break;
 		}
 
@@ -399,19 +435,26 @@ class ModelExtensionReportSale extends Model {
 			$group = 'week';
 		}
 
-		switch($group) {
-			case 'day';
+		switch ($group) {
+			case 'day':
 				$sql = "SELECT COUNT(DISTINCT YEAR(o.date_added), MONTH(o.date_added), DAY(o.date_added), ot.title) AS total FROM `" . DB_PREFIX . "order` o";
+
 				break;
+
 			default:
 			case 'week':
 				$sql = "SELECT COUNT(DISTINCT YEAR(o.date_added), WEEK(o.date_added), ot.title) AS total FROM `" . DB_PREFIX . "order` o";
+
 				break;
+
 			case 'month':
 				$sql = "SELECT COUNT(DISTINCT YEAR(o.date_added), MONTH(o.date_added), ot.title) AS total FROM `" . DB_PREFIX . "order` o";
+
 				break;
+
 			case 'year':
 				$sql = "SELECT COUNT(DISTINCT YEAR(o.date_added), ot.title) AS total FROM `" . DB_PREFIX . "order` o";
+
 				break;
 		}
 

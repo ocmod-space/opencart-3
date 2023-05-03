@@ -1,4 +1,5 @@
 <?php
+
 class ModelLocalisationReturnReason extends Model {
 	public function getReturnReasons($data = array()) {
 		if ($data) {

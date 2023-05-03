@@ -1,4 +1,5 @@
 <?php
+
 class ControllerAccountTransaction extends Controller {
 	public function index() {
 		if (!$this->customer->isLogged()) {
@@ -29,7 +30,7 @@ class ControllerAccountTransaction extends Controller {
 		);
 
 		$this->load->model('account/transaction');
-		
+
 		$data['column_amount'] = sprintf($this->language->get('column_amount'), $this->config->get('config_currency'));
 
 		if (isset($this->request->get['page'])) {

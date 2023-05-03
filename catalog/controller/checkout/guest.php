@@ -1,4 +1,5 @@
 <?php
+
 class ControllerCheckoutGuest extends Controller {
 	public function index() {
 		$this->load->language('checkout/checkout');
@@ -136,7 +137,7 @@ class ControllerCheckoutGuest extends Controller {
 		} else {
 			$data['captcha'] = '';
 		}
-		
+
 		$this->response->setOutput($this->load->view('checkout/guest', $data));
 	}
 
@@ -174,7 +175,6 @@ class ControllerCheckoutGuest extends Controller {
 			}
 
 			if ((utf8_strlen($this->request->post['telephone']) < 3) || (utf8_strlen($this->request->post['telephone']) > 32)) {
-
 				$json['error']['telephone'] = $this->language->get('error_telephone');
 			}
 
@@ -218,8 +218,8 @@ class ControllerCheckoutGuest extends Controller {
 				if ($custom_field['required'] && empty($this->request->post['custom_field'][$custom_field['location']][$custom_field['custom_field_id']])) {
 					$json['error']['custom_field' . $custom_field['custom_field_id']] = sprintf($this->language->get('error_custom_field'), $custom_field['name']);
 				} elseif (($custom_field['type'] == 'text') && !empty($custom_field['validation']) && !filter_var($this->request->post['custom_field'][$custom_field['location']][$custom_field['custom_field_id']], FILTER_VALIDATE_REGEXP, array('options' => array('regexp' => $custom_field['validation'])))) {
-                    $json['error']['custom_field' . $custom_field['custom_field_id']] = sprintf($this->language->get('error_custom_field'), $custom_field['name']);
-                }
+					$json['error']['custom_field' . $custom_field['custom_field_id']] = sprintf($this->language->get('error_custom_field'), $custom_field['name']);
+				}
 			}
 
 			// Captcha

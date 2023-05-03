@@ -1,4 +1,5 @@
 <?php
+
 class ControllerApiCurrency extends Controller {
 	public function index() {
 		$this->load->language('api/currency');

@@ -1,4 +1,5 @@
 <?php
+
 class ControllerCatalogProduct extends Controller {
 	private $error = array();
 
@@ -322,9 +323,9 @@ class ControllerCatalogProduct extends Controller {
 		$data['products'] = array();
 
 		$filter_data = array(
-			'filter_name'	  => $filter_name,
-			'filter_model'	  => $filter_model,
-			'filter_price'	  => $filter_price,
+			'filter_name'     => $filter_name,
+			'filter_model'    => $filter_model,
+			'filter_price'    => $filter_price,
 			'filter_quantity' => $filter_quantity,
 			'filter_status'   => $filter_status,
 			'sort'            => $sort,
@@ -1031,7 +1032,7 @@ class ControllerCatalogProduct extends Controller {
 				'priority'          => $product_special['priority'],
 				'price'             => $product_special['price'],
 				'date_start'        => ($product_special['date_start'] != '0000-00-00') ? $product_special['date_start'] : '',
-				'date_end'          => ($product_special['date_end'] != '0000-00-00') ? $product_special['date_end'] :  ''
+				'date_end'          => ($product_special['date_end'] != '0000-00-00') ? $product_special['date_end'] : ''
 			);
 		}
 

@@ -1,4 +1,5 @@
 <?php
+
 class ControllerLocalisationLocation extends Controller {
 	private $error = array();
 
@@ -143,16 +144,16 @@ class ControllerLocalisationLocation extends Controller {
 			$url .= '&page=' . $this->request->get['page'];
 		}
 
-		$data['breadcrumbs'] =   array();
+		$data['breadcrumbs'] = array();
 
-		$data['breadcrumbs'][] =   array(
-			'text' =>  $this->language->get('text_home'),
+		$data['breadcrumbs'][] = array(
+			'text' => $this->language->get('text_home'),
 			'href' => $this->url->link('common/dashboard', 'user_token=' . $this->session->data['user_token'], true)
 		);
 
-		$data['breadcrumbs'][] =   array(
-			'text' =>  $this->language->get('heading_title'),
-			'href' =>  $this->url->link('localisation/location', 'user_token=' . $this->session->data['user_token'] . $url, true)
+		$data['breadcrumbs'][] = array(
+			'text' => $this->language->get('heading_title'),
+			'href' => $this->url->link('localisation/location', 'user_token=' . $this->session->data['user_token'] . $url, true)
 		);
 
 		$data['add'] = $this->url->link('localisation/location/add', 'user_token=' . $this->session->data['user_token'] . $url, true);
@@ -172,7 +173,7 @@ class ControllerLocalisationLocation extends Controller {
 		$results = $this->model_localisation_location->getLocations($filter_data);
 
 		foreach ($results as $result) {
-			$data['locations'][] =   array(
+			$data['locations'][] = array(
 				'location_id' => $result['location_id'],
 				'name'        => $result['name'],
 				'address'     => $result['address'],
@@ -301,7 +302,7 @@ class ControllerLocalisationLocation extends Controller {
 		if (!isset($this->request->get['location_id'])) {
 			$data['action'] = $this->url->link('localisation/location/add', 'user_token=' . $this->session->data['user_token'] . $url, true);
 		} else {
-			$data['action'] = $this->url->link('localisation/location/edit', 'user_token=' . $this->session->data['user_token'] .  '&location_id=' . $this->request->get['location_id'] . $url, true);
+			$data['action'] = $this->url->link('localisation/location/edit', 'user_token=' . $this->session->data['user_token'] . '&location_id=' . $this->request->get['location_id'] . $url, true);
 		}
 
 		$data['cancel'] = $this->url->link('localisation/location', 'user_token=' . $this->session->data['user_token'] . $url, true);
@@ -319,7 +320,7 @@ class ControllerLocalisationLocation extends Controller {
 		} elseif (!empty($location_info)) {
 			$data['name'] = $location_info['name'];
 		} else {
-			$data['name'] =   '';
+			$data['name'] = '';
 		}
 
 		if (isset($this->request->post['address'])) {
@@ -345,7 +346,7 @@ class ControllerLocalisationLocation extends Controller {
 		} else {
 			$data['telephone'] = '';
 		}
-		
+
 		if (isset($this->request->post['fax'])) {
 			$data['fax'] = $this->request->post['fax'];
 		} elseif (!empty($location_info)) {
@@ -353,7 +354,7 @@ class ControllerLocalisationLocation extends Controller {
 		} else {
 			$data['fax'] = '';
 		}
-		
+
 		if (isset($this->request->post['image'])) {
 			$data['image'] = $this->request->post['image'];
 		} elseif (!empty($location_info)) {

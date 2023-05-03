@@ -1,4 +1,5 @@
 <?php
+
 class ControllerAccountPassword extends Controller {
 	private $error = array();
 

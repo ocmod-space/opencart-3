@@ -1,4 +1,5 @@
 <?php
+
 class Controller3rdPartyExtension extends Controller {
 	public function index() {
 		$curl = curl_init();

@@ -1,4 +1,5 @@
 <?php
+
 class ControllerProductProduct extends Controller {
 	private $error = array();
 
@@ -161,15 +162,15 @@ class ControllerProductProduct extends Controller {
 		//check product page open from cateory page
 		if (isset($this->request->get['path'])) {
 			$parts = explode('_', (string)$this->request->get['path']);
-						
-			if(empty($this->model_catalog_product->checkProductCategory($product_id, $parts))) {
+
+			if (empty($this->model_catalog_product->checkProductCategory($product_id, $parts))) {
 				$product_info = array();
 			}
 		}
 
 		//check product page open from manufacturer page
 		if (isset($this->request->get['manufacturer_id']) && !empty($product_info)) {
-			if($product_info['manufacturer_id'] !=  $this->request->get['manufacturer_id']) {
+			if ($product_info['manufacturer_id'] != $this->request->get['manufacturer_id']) {
 				$product_info = array();
 			}
 		}
@@ -415,7 +416,7 @@ class ControllerProductProduct extends Controller {
 					$special = false;
 					$tax_price = (float)$result['price'];
 				}
-	
+
 				if ($this->config->get('config_tax')) {
 					$tax = $this->currency->format($tax_price, $this->session->data['currency']);
 				} else {
@@ -458,7 +459,7 @@ class ControllerProductProduct extends Controller {
 			$data['recurrings'] = $this->model_catalog_product->getProfiles($this->request->get['product_id']);
 
 			$this->model_catalog_product->updateViewed($this->request->get['product_id']);
-			
+
 			$data['column_left'] = $this->load->controller('common/column_left');
 			$data['column_right'] = $this->load->controller('common/column_right');
 			$data['content_top'] = $this->load->controller('common/content_top');
@@ -593,7 +594,7 @@ class ControllerProductProduct extends Controller {
 				if ((utf8_strlen($this->request->post['text']) < 25) || (utf8_strlen($this->request->post['text']) > 1000)) {
 					$json['error'] = $this->language->get('error_text');
 				}
-			
+
 				if (empty($this->request->post['rating']) || $this->request->post['rating'] < 0 || $this->request->post['rating'] > 5) {
 					$json['error'] = $this->language->get('error_rating');
 				}
@@ -617,7 +618,7 @@ class ControllerProductProduct extends Controller {
 			}
 		} else {
 			$json['error'] = $this->language->get('error_product');
-		} 
+		}
 
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));
@@ -646,7 +647,7 @@ class ControllerProductProduct extends Controller {
 		}
 
 		$product_info = $this->model_catalog_product->getProduct($product_id);
-		
+
 		$recurring_info = $this->model_catalog_product->getProfile($product_id, $recurring_id);
 
 		$json = array();

@@ -1,4 +1,5 @@
 <?php
+
 class ControllerAccountAddress extends Controller {
 	private $error = array();
 
@@ -199,7 +200,7 @@ class ControllerAccountAddress extends Controller {
 
 			$data['addresses'][] = array(
 				'address_id' => $result['address_id'],
-				'address'    => str_replace(array("\r\n", "\r", "\n"), '<br />', preg_replace(array("/\s\s+/", "/\r\r+/", "/\n\n+/"), '<br />', trim(str_replace($find, $replace, $format)))),
+				'address'    => str_replace(array("\r\n", "\r", "\n"), '<br />', preg_replace(array("/\\s\\s+/", "/\r\r+/", "/\n\n+/"), '<br />', trim(str_replace($find, $replace, $format)))),
 				'update'     => $this->url->link('account/address/edit', 'address_id=' . $result['address_id'], true),
 				'delete'     => $this->url->link('account/address/delete', 'address_id=' . $result['address_id'], true)
 			);
@@ -366,7 +367,7 @@ class ControllerAccountAddress extends Controller {
 
 		if (isset($this->request->post['country_id'])) {
 			$data['country_id'] = (int)$this->request->post['country_id'];
-		}  elseif (!empty($address_info)) {
+		} elseif (!empty($address_info)) {
 			$data['country_id'] = $address_info['country_id'];
 		} else {
 			$data['country_id'] = $this->config->get('config_country_id');
@@ -374,7 +375,7 @@ class ControllerAccountAddress extends Controller {
 
 		if (isset($this->request->post['zone_id'])) {
 			$data['zone_id'] = (int)$this->request->post['zone_id'];
-		}  elseif (!empty($address_info)) {
+		} elseif (!empty($address_info)) {
 			$data['zone_id'] = $address_info['zone_id'];
 		} else {
 			$data['zone_id'] = '';
@@ -394,7 +395,7 @@ class ControllerAccountAddress extends Controller {
 
 		// Custom fields
 		$data['custom_fields'] = array();
-		
+
 		$this->load->model('tool/upload');
 		$this->load->model('account/custom_field');
 
@@ -402,13 +403,13 @@ class ControllerAccountAddress extends Controller {
 
 		foreach ($custom_fields as $custom_field) {
 			if ($custom_field['location'] == 'address') {
-				if($custom_field['type'] == 'file' && isset($data['address_custom_field'][$custom_field['custom_field_id']])) {
+				if ($custom_field['type'] == 'file' && isset($data['address_custom_field'][$custom_field['custom_field_id']])) {
 					$code = $data['address_custom_field'][$custom_field['custom_field_id']];
 
 					$upload_result = $this->model_tool_upload->getUploadByCode($code);
 
 					$data['address_custom_field'][$custom_field['custom_field_id']] = array();
-					if($upload_result) {
+					if ($upload_result) {
 						$data['address_custom_field'][$custom_field['custom_field_id']]['name'] = $upload_result['name'];
 						$data['address_custom_field'][$custom_field['custom_field_id']]['code'] = $upload_result['code'];
 					} else {

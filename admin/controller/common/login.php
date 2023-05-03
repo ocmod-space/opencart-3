@@ -1,4 +1,5 @@
 <?php
+
 class ControllerCommonLogin extends Controller {
 	private $error = array();
 
@@ -85,7 +86,7 @@ class ControllerCommonLogin extends Controller {
 	}
 
 	protected function validate() {
-		if(!isset($this->request->post['username']) || !isset($this->request->post['password']) || !$this->request->post['username'] || !$this->request->post['password']) {
+		if (!isset($this->request->post['username']) || !isset($this->request->post['password']) || !$this->request->post['username'] || !$this->request->post['password']) {
 			$this->error['warning'] = $this->language->get('error_login');
 		} else {
 			$this->load->model('user/user');
@@ -98,7 +99,7 @@ class ControllerCommonLogin extends Controller {
 			}
 		}
 
-		if(!$this->error) {
+		if (!$this->error) {
 			if (!$this->user->login($this->request->post['username'], html_entity_decode($this->request->post['password'], ENT_QUOTES, 'UTF-8'))) {
 				$this->error['warning'] = $this->language->get('error_login');
 

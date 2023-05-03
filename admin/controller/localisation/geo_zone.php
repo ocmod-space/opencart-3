@@ -1,4 +1,5 @@
 <?php
+
 class ControllerLocalisationGeoZone extends Controller {
 	private $error = array();
 

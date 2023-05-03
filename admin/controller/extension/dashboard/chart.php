@@ -1,4 +1,5 @@
 <?php
+
 class ControllerExtensionDashboardChart extends Controller {
 	private $error = array();
 
@@ -49,13 +50,13 @@ class ControllerExtensionDashboardChart extends Controller {
 		} else {
 			$data['dashboard_chart_width'] = $this->config->get('dashboard_chart_width');
 		}
-	
+
 		$data['columns'] = array();
-		
+
 		for ($i = 3; $i <= 12; $i++) {
 			$data['columns'][] = $i;
 		}
-				
+
 		if (isset($this->request->post['dashboard_chart_status'])) {
 			$data['dashboard_chart_status'] = $this->request->post['dashboard_chart_status'];
 		} else {
@@ -81,8 +82,8 @@ class ControllerExtensionDashboardChart extends Controller {
 		}
 
 		return !$this->error;
-	}	
-	
+	}
+
 	public function dashboard() {
 		$this->load->language('extension/dashboard/chart');
 
@@ -131,7 +132,9 @@ class ControllerExtensionDashboardChart extends Controller {
 				for ($i = 0; $i < 24; $i++) {
 					$json['xaxis'][] = array($i, $i);
 				}
+
 				break;
+
 			case 'week':
 				$results = $this->model_extension_dashboard_chart->getTotalOrdersByWeek();
 
@@ -152,7 +155,9 @@ class ControllerExtensionDashboardChart extends Controller {
 
 					$json['xaxis'][] = array(date('w', strtotime($date)), date('D', strtotime($date)));
 				}
+
 				break;
+
 			case 'month':
 				$results = $this->model_extension_dashboard_chart->getTotalOrdersByMonth();
 
@@ -171,7 +176,9 @@ class ControllerExtensionDashboardChart extends Controller {
 
 					$json['xaxis'][] = array(date('j', strtotime($date)), date('d', strtotime($date)));
 				}
+
 				break;
+
 			case 'year':
 				$results = $this->model_extension_dashboard_chart->getTotalOrdersByYear();
 
@@ -188,6 +195,7 @@ class ControllerExtensionDashboardChart extends Controller {
 				for ($i = 1; $i <= 12; $i++) {
 					$json['xaxis'][] = array($i, date('M', mktime(0, 0, 0, $i)));
 				}
+
 				break;
 		}
 

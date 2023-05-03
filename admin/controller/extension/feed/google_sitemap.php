@@ -1,4 +1,5 @@
 <?php
+
 class ControllerExtensionFeedGoogleSitemap extends Controller {
 	private $error = array();
 

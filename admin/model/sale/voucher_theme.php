@@ -1,4 +1,5 @@
 <?php
+
 class ModelSaleVoucherTheme extends Model {
 	public function addVoucherTheme($data) {
 		$this->db->query("INSERT INTO " . DB_PREFIX . "voucher_theme SET image = '" . $this->db->escape($data['image']) . "'");
@@ -10,7 +11,7 @@ class ModelSaleVoucherTheme extends Model {
 		}
 
 		$this->cache->delete('voucher_theme');
-		
+
 		return $voucher_theme_id;
 	}
 

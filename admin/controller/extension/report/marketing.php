@@ -1,4 +1,5 @@
 <?php
+
 class ControllerExtensionReportMarketing extends Controller {
 	public function index() {
 		$this->load->language('extension/report/marketing');
@@ -60,7 +61,7 @@ class ControllerExtensionReportMarketing extends Controller {
 
 		$this->response->setOutput($this->load->view('extension/report/marketing_form', $data));
 	}
-	
+
 	protected function validate() {
 		if (!$this->user->hasPermission('modify', 'extension/report/marketing')) {
 			$this->error['warning'] = $this->language->get('error_permission');
@@ -68,7 +69,7 @@ class ControllerExtensionReportMarketing extends Controller {
 
 		return !$this->error;
 	}
-	
+
 	public function report() {
 		$this->load->language('extension/report/marketing');
 
@@ -101,8 +102,8 @@ class ControllerExtensionReportMarketing extends Controller {
 		$data['marketings'] = array();
 
 		$filter_data = array(
-			'filter_date_start'	     => $filter_date_start,
-			'filter_date_end'	     => $filter_date_end,
+			'filter_date_start'      => $filter_date_start,
+			'filter_date_end'        => $filter_date_end,
 			'filter_order_status_id' => $filter_order_status_id,
 			'start'                  => ($page - 1) * $this->config->get('config_limit_admin'),
 			'limit'                  => $this->config->get('config_limit_admin')

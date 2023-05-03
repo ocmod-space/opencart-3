@@ -1,4 +1,5 @@
 <?php
+
 class ControllerExtensionModuleCarousel extends Controller {
 	private $error = array();
 

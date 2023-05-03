@@ -1,4 +1,5 @@
 <?php
+
 class ControllerCatalogOption extends Controller {
 	private $error = array();
 

@@ -1,4 +1,5 @@
 <?php
+
 class ControllerLocalisationWeightClass extends Controller {
 	private $error = array();
 

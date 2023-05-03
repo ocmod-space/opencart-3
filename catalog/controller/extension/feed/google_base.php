@@ -1,8 +1,9 @@
 <?php
+
 class ControllerExtensionFeedGoogleBase extends Controller {
 	public function index() {
 		if ($this->config->get('feed_google_base_status')) {
-			$output  = '<?xml version="1.0" encoding="UTF-8" ?>';
+			$output = '<?xml version="1.0" encoding="UTF-8" ?>';
 			$output .= '<rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">';
 			$output .= '  <channel>';
 			$output .= '  <title>' . $this->config->get('config_name') . '</title>';
@@ -29,9 +30,8 @@ class ControllerExtensionFeedGoogleBase extends Controller {
 
 				foreach ($products as $product) {
 					if (!in_array($product['product_id'], $product_data) && $product['description']) {
-						
 						$product_data[] = $product['product_id'];
-						
+
 						$output .= '<item>';
 						$output .= '<title><![CDATA[' . $product['name'] . ']]></title>';
 						$output .= '<link>' . $this->url->link('product/product', 'product_id=' . $product['product_id']) . '</link>';
@@ -49,7 +49,7 @@ class ControllerExtensionFeedGoogleBase extends Controller {
 						$output .= '  <g:model_number>' . $product['model'] . '</g:model_number>';
 
 						if ($product['mpn']) {
-							$output .= '  <g:mpn><![CDATA[' . $product['mpn'] . ']]></g:mpn>' ;
+							$output .= '  <g:mpn><![CDATA[' . $product['mpn'] . ']]></g:mpn>';
 						} else {
 							$output .= '  <g:identifier_exists>false</g:identifier_exists>';
 						}
@@ -77,7 +77,7 @@ class ControllerExtensionFeedGoogleBase extends Controller {
 						}
 
 						if ((float)$product['special']) {
-							$output .= '  <g:price>' .  $this->currency->format($this->tax->calculate($product['special'], $product['tax_class_id']), $currency_code, $currency_value, false) . '</g:price>';
+							$output .= '  <g:price>' . $this->currency->format($this->tax->calculate($product['special'], $product['tax_class_id']), $currency_code, $currency_value, false) . '</g:price>';
 						} else {
 							$output .= '  <g:price>' . $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id']), $currency_code, $currency_value, false) . '</g:price>';
 						}

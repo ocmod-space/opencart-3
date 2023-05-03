@@ -1,4 +1,5 @@
 <?php
+
 class ControllerExtensionDashboardRecent extends Controller {
 	private $error = array();
 
@@ -51,11 +52,11 @@ class ControllerExtensionDashboardRecent extends Controller {
 		}
 
 		$data['columns'] = array();
-		
+
 		for ($i = 3; $i <= 12; $i++) {
 			$data['columns'][] = $i;
 		}
-				
+
 		if (isset($this->request->post['dashboard_recent_status'])) {
 			$data['dashboard_recent_status'] = $this->request->post['dashboard_recent_status'];
 		} else {
@@ -82,7 +83,7 @@ class ControllerExtensionDashboardRecent extends Controller {
 
 		return !$this->error;
 	}
-	
+
 	public function dashboard() {
 		$this->load->language('extension/dashboard/recent');
 
@@ -99,7 +100,7 @@ class ControllerExtensionDashboardRecent extends Controller {
 		);
 
 		$this->load->model('sale/order');
-		
+
 		$results = $this->model_sale_order->getOrders($filter_data);
 
 		foreach ($results as $result) {

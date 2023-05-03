@@ -1,4 +1,5 @@
 <?php
+
 class ControllerExtensionTotalCoupon extends Controller {
 	private $error = array();
 

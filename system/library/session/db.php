@@ -1,4 +1,5 @@
 <?php
+
 namespace Session;
 
 final class DB {

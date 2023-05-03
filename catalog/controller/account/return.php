@@ -1,4 +1,5 @@
 <?php
+
 class ControllerAccountReturn extends Controller {
 	private $error = array();
 

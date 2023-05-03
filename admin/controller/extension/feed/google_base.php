@@ -1,4 +1,5 @@
 <?php
+
 class ControllerExtensionFeedGoogleBase extends Controller {
 	private $error = array();
 

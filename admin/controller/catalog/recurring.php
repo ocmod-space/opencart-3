@@ -1,4 +1,5 @@
 <?php
+
 class ControllerCatalogRecurring extends Controller {
 	private $error = array();
 

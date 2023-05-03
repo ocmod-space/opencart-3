@@ -1,4 +1,5 @@
 <?php
+
 class ControllerDesignTheme extends Controller {
 	public function index() {
 		$this->load->language('design/theme');
@@ -123,8 +124,8 @@ class ControllerDesignTheme extends Controller {
 			$files = glob(rtrim(DIR_CATALOG . 'view/theme/{default,' . $theme . '}/template/' . $path, '/') . '/*', GLOB_BRACE);
 
 			if ($files) {
-				foreach($files as $file) {
-					if (!in_array(basename($file), $path_data))  {
+				foreach ($files as $file) {
+					if (!in_array(basename($file), $path_data)) {
 						if (is_dir($file)) {
 							$json['directory'][] = array(
 								'name' => basename($file),

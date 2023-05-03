@@ -1,4 +1,5 @@
 <?php
+
 class ControllerCheckoutShippingMethod extends Controller {
 	public function index() {
 		$this->load->language('checkout/checkout');
@@ -62,7 +63,7 @@ class ControllerCheckoutShippingMethod extends Controller {
 		} else {
 			$data['comment'] = '';
 		}
-		
+
 		$this->response->setOutput($this->load->view('checkout/shipping_method', $data));
 	}
 

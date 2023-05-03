@@ -1,4 +1,5 @@
 <?php
+
 class ControllerExtensionModuleBanner extends Controller {
 	private $error = array();
 

@@ -1,4 +1,5 @@
 <?php
+
 class ControllerAccountLogin extends Controller {
 	private $error = array();
 

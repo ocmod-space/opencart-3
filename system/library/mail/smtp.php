@@ -1,5 +1,7 @@
 <?php
+
 namespace Mail;
+
 class Smtp {
 	public $smtp_hostname;
 	public $smtp_username;
@@ -112,7 +114,7 @@ class Smtp {
 					$reply = '';
 
 					continue;
-				} else if (substr($line, 3, 1) == ' ') {
+				} elseif (substr($line, 3, 1) == ' ') {
 					break;
 				}
 			}
@@ -145,7 +147,6 @@ class Smtp {
 				fputs($handle, base64_encode($this->smtp_password) . "\r\n");
 
 				$this->handleReply($handle, 235, 'Error: Password not accepted from server!');
-
 			} else {
 				fputs($handle, 'HELO ' . getenv('SERVER_NAME') . "\r\n");
 

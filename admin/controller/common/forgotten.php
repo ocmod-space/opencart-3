@@ -1,4 +1,5 @@
 <?php
+
 class ControllerCommonForgotten extends Controller {
 	private $error = array();
 

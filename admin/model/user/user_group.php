@@ -1,8 +1,9 @@
 <?php
+
 class ModelUserUserGroup extends Model {
 	public function addUserGroup($data) {
 		$this->db->query("INSERT INTO " . DB_PREFIX . "user_group SET name = '" . $this->db->escape($data['name']) . "', permission = '" . (isset($data['permission']) ? $this->db->escape(json_encode($data['permission'])) : '') . "'");
-	
+
 		return $this->db->getLastId();
 	}
 
@@ -17,12 +18,10 @@ class ModelUserUserGroup extends Model {
 	public function getUserGroup($user_group_id) {
 		$query = $this->db->query("SELECT DISTINCT * FROM " . DB_PREFIX . "user_group WHERE user_group_id = '" . (int)$user_group_id . "'");
 
-		$user_group = array(
+		return array(
 			'name'       => $query->row['name'],
 			'permission' => json_decode($query->row['permission'], true)
 		);
-
-		return $user_group;
 	}
 
 	public function getUserGroups($data = array()) {

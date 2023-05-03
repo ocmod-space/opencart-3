@@ -1,4 +1,5 @@
 <?php
+
 class ModelExtensionShippingWeight extends Model {
 	public function getQuote($address) {
 		$this->load->language('extension/shipping/weight');
@@ -7,7 +8,7 @@ class ModelExtensionShippingWeight extends Model {
 
 		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "geo_zone ORDER BY name");
 
-        $weight = $this->cart->getWeight();
+		$weight = $this->cart->getWeight();
 
 		foreach ($query->rows as $result) {
 			if ($this->config->get('shipping_weight_' . $result['geo_zone_id'] . '_status')) {

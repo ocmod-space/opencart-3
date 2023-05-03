@@ -1,4 +1,5 @@
 <?php
+
 class ControllerExtensionModuleSlideshow extends Controller {
 	private $error = array();
 

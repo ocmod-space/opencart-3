@@ -1,4 +1,5 @@
 <?php
+
 class ControllerAccountForgotten extends Controller {
 	private $error = array();
 
@@ -70,7 +71,7 @@ class ControllerAccountForgotten extends Controller {
 		} elseif (!$this->model_account_customer->getTotalCustomersByEmail($this->request->post['email'])) {
 			$this->error['warning'] = $this->language->get('error_email');
 		}
-		
+
 		// Check if customer has been approved.
 		$customer_info = $this->model_account_customer->getCustomerByEmail($this->request->post['email']);
 

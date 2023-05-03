@@ -1,4 +1,5 @@
 <?php
+
 class ControllerExtensionTotalLowOrderFee extends Controller {
 	private $error = array();
 

@@ -1,4 +1,5 @@
 <?php
+
 class ControllerExtensionDashboardOnline extends Controller {
 	private $error = array();
 
@@ -49,13 +50,13 @@ class ControllerExtensionDashboardOnline extends Controller {
 		} else {
 			$data['dashboard_online_width'] = $this->config->get('dashboard_online_width');
 		}
-	
+
 		$data['columns'] = array();
-		
+
 		for ($i = 3; $i <= 12; $i++) {
 			$data['columns'][] = $i;
 		}
-				
+
 		if (isset($this->request->post['dashboard_online_status'])) {
 			$data['dashboard_online_status'] = $this->request->post['dashboard_online_status'];
 		} else {
@@ -82,7 +83,7 @@ class ControllerExtensionDashboardOnline extends Controller {
 
 		return !$this->error;
 	}
-	
+
 	public function dashboard() {
 		$this->load->language('extension/dashboard/online');
 

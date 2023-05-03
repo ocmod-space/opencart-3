@@ -1,6 +1,6 @@
 <?php
 /**
- * Modifcation XML Documentation can be found here:
+ * Modifcation XML Documentation can be found here:.
  *
  * https://github.com/opencart/opencart/wiki/Modification-System
  */
@@ -134,10 +134,10 @@ class ControllerMarketplaceModification extends Controller {
 			$modification = array();
 
 			foreach ($xml as $xml) {
-				if (empty($xml)){
+				if (empty($xml)) {
 					continue;
 				}
-				
+
 				$dom = new DOMDocument('1.0', 'UTF-8');
 				$dom->preserveWhiteSpace = false;
 				$dom->loadXml($xml);
@@ -203,11 +203,9 @@ class ControllerMarketplaceModification extends Controller {
 
 										// Log
 										$log[] = PHP_EOL . 'FILE: ' . $key;
-
 									} else {
 										// Log
 										$log[] = PHP_EOL . 'FILE: (sub modification) ' . $key;
-									
 									}
 
 									foreach ($operations as $operation) {
@@ -304,20 +302,25 @@ class ControllerMarketplaceModification extends Controller {
 															} else {
 																array_splice($lines, $line_id, $offset + 1, array(str_replace($search, $add, $line)));
 															}
+
 															break;
+
 														case 'before':
 															$new_lines = explode("\n", $add);
 
 															array_splice($lines, $line_id - $offset, 0, $new_lines);
 
 															$line_id += count($new_lines);
+
 															break;
+
 														case 'after':
 															$new_lines = explode("\n", $add);
 
 															array_splice($lines, ($line_id + 1) + $offset, 0, $new_lines);
 
 															$line_id += count($new_lines);
+
 															break;
 													}
 
@@ -369,19 +372,22 @@ class ControllerMarketplaceModification extends Controller {
 												$modification = $recovery;
 												// Log
 												$log[] = 'NOT FOUND - ABORTING!';
+
 												break 5;
 											}
 											// Skip current operation or break
 											elseif ($error == 'skip') {
 												// Log
 												$log[] = 'NOT FOUND - OPERATION SKIPPED!';
+
 												continue;
 											}
 											// Break current operations
 											else {
 												// Log
 												$log[] = 'NOT FOUND - OPERATIONS ABORTED!';
-											 	break;
+
+												break;
 											}
 										}
 									}
@@ -582,11 +588,11 @@ class ControllerMarketplaceModification extends Controller {
 
 	public function clearlog() {
 		$this->load->language('marketplace/modification');
-		
+
 		$this->document->setTitle($this->language->get('heading_title'));
 
 		$this->load->model('setting/modification');
-		
+
 		if ($this->validate()) {
 			$handle = fopen(DIR_LOGS . 'ocmod.log', 'w+');
 

@@ -1,4 +1,5 @@
 <?php
+
 class ControllerExtensionTotalReward extends Controller {
 	private $error = array();
 

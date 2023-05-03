@@ -1,4 +1,5 @@
 <?php
+
 class ControllerExtensionExtensionModule extends Controller {
 	private $error = array();
 
@@ -34,7 +35,7 @@ class ControllerExtensionExtensionModule extends Controller {
 		} else {
 			$this->session->data['error'] = $this->error['warning'];
 		}
-	
+
 		$this->getList();
 	}
 
@@ -58,7 +59,7 @@ class ControllerExtensionExtensionModule extends Controller {
 
 		$this->getList();
 	}
-	
+
 	public function add() {
 		$this->load->language('extension/extension/module');
 
@@ -68,7 +69,7 @@ class ControllerExtensionExtensionModule extends Controller {
 
 		if ($this->validate()) {
 			$this->load->language('module' . '/' . $this->request->get['extension']);
-			
+
 			$this->model_setting_module->addModule($this->request->get['extension'], $this->language->get('heading_title'));
 
 			$this->session->data['success'] = $this->language->get('text_success');
@@ -89,7 +90,7 @@ class ControllerExtensionExtensionModule extends Controller {
 
 			$this->session->data['success'] = $this->language->get('text_success');
 		}
-		
+
 		$this->getList();
 	}
 
@@ -117,7 +118,7 @@ class ControllerExtensionExtensionModule extends Controller {
 				$this->model_setting_extension->uninstall('module', $value);
 
 				unset($extensions[$key]);
-				
+
 				$this->model_setting_module->deleteModulesByCode($value);
 			}
 		}
@@ -126,7 +127,7 @@ class ControllerExtensionExtensionModule extends Controller {
 
 		// Create a new language container so we don't pollute the current one
 		$language = new Language($this->config->get('config_language'));
-		
+
 		// Compatibility code for old extension folders
 		$files = glob(DIR_APPLICATION . 'controller/extension/module/*.php');
 
@@ -146,7 +147,7 @@ class ControllerExtensionExtensionModule extends Controller {
 					} else {
 						$setting_info = array();
 					}
-					
+
 					$module_data[] = array(
 						'module_id' => $module['module_id'],
 						'name'      => $module['name'],
@@ -186,7 +187,7 @@ class ControllerExtensionExtensionModule extends Controller {
 			$this->error['warning'] = $this->language->get('error_permission');
 		}
 
-		if(!isset($this->error['warning']) && isset($this->request->get['extension']) && ((utf8_strlen($this->request->get['extension']) < 3) || (utf8_strlen($this->request->get['extension']) > 32))) {
+		if (!isset($this->error['warning']) && isset($this->request->get['extension']) && ((utf8_strlen($this->request->get['extension']) < 3) || (utf8_strlen($this->request->get['extension']) > 32))) {
 			$this->error['warning'] = $this->language->get('error_code_name');
 		}
 

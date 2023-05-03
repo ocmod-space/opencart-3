@@ -1,4 +1,5 @@
 <?php
+
 class ModelUpgrade1005 extends Model {
 	public function upgrade() {
 		// customer
@@ -10,7 +11,7 @@ class ModelUpgrade1005 extends Model {
 		if (!$query->num_rows) {
 			$this->db->query("ALTER TABLE `" . DB_PREFIX . "customer` ADD `code` varchar(40) NOT NULL AFTER `token`");
 		}
-		
+
 		// custom_field
 		$query = $this->db->query("SELECT * FROM information_schema.COLUMNS WHERE TABLE_SCHEMA = '" . DB_DATABASE . "' AND TABLE_NAME = '" . DB_PREFIX . "custom_field' AND COLUMN_NAME = 'validation'");
 
@@ -110,7 +111,7 @@ class ModelUpgrade1005 extends Model {
 		$this->db->query("UPDATE `" . DB_PREFIX . "product_description` SET `meta_title` = `name` WHERE meta_title = ''");
 		$this->db->query("UPDATE `" . DB_PREFIX . "category_description` SET `meta_title` = `name` WHERE meta_title = ''");
 		$this->db->query("UPDATE `" . DB_PREFIX . "information_description` SET `meta_title` = `title` WHERE meta_title = ''");
-		
+
 		// setting
 		$query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "setting` WHERE `key` = 'config_complete_status'");
 

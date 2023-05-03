@@ -1,4 +1,5 @@
 <?php
+
 class ModelInstallInstall extends Model {
 	public function database($data) {
 		$db = new DB($data['db_driver'], htmlspecialchars_decode($data['db_hostname']), htmlspecialchars_decode($data['db_username']), htmlspecialchars_decode($data['db_password']), htmlspecialchars_decode($data['db_database']), $data['db_port']);
@@ -14,7 +15,7 @@ class ModelInstallInstall extends Model {
 		if ($lines) {
 			$sql = '';
 
-			foreach($lines as $line) {
+			foreach ($lines as $line) {
 				if ($line && (substr($line, 0, 2) != '--') && (substr($line, 0, 1) != '#')) {
 					$sql .= $line;
 
@@ -50,7 +51,7 @@ class ModelInstallInstall extends Model {
 
 			$db->query("DELETE FROM `" . $data['db_prefix'] . "setting` WHERE `key` = 'config_api_id'");
 			$db->query("INSERT INTO `" . $data['db_prefix'] . "setting` SET `code` = 'config', `key` = 'config_api_id', value = '" . (int)$api_id . "'");
-			
+
 			// set the current years prefix
 			$db->query("UPDATE `" . $data['db_prefix'] . "setting` SET `value` = 'INV-" . date('Y') . "-00' WHERE `key` = 'config_invoice_prefix'");
 		}

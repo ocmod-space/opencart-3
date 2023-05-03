@@ -1,4 +1,5 @@
 <?php
+
 class ControllerProductCategory extends Controller {
 	public function index() {
 		$this->load->language('product/category');
@@ -182,7 +183,7 @@ class ControllerProductCategory extends Controller {
 					$special = false;
 					$tax_price = (float)$result['price'];
 				}
-	
+
 				if ($this->config->get('config_tax')) {
 					$tax = $this->currency->format($tax_price, $this->session->data['currency']);
 				} else {
@@ -297,7 +298,7 @@ class ControllerProductCategory extends Controller {
 
 			sort($limits);
 
-			foreach($limits as $value) {
+			foreach ($limits as $value) {
 				$data['limits'][] = array(
 					'text'  => $value,
 					'value' => $value,
@@ -335,17 +336,17 @@ class ControllerProductCategory extends Controller {
 
 			// http://googlewebmastercentral.blogspot.com/2011/09/pagination-with-relnext-and-relprev.html
 			if ($page == 1) {
-			    $this->document->addLink($this->url->link('product/category', 'path=' . $category_info['category_id']), 'canonical');
+				$this->document->addLink($this->url->link('product/category', 'path=' . $category_info['category_id']), 'canonical');
 			} else {
-				$this->document->addLink($this->url->link('product/category', 'path=' . $category_info['category_id'] . '&page='. $page), 'canonical');
+				$this->document->addLink($this->url->link('product/category', 'path=' . $category_info['category_id'] . '&page=' . $page), 'canonical');
 			}
-			
+
 			if ($page > 1) {
-			    $this->document->addLink($this->url->link('product/category', 'path=' . $category_info['category_id'] . (($page - 2) ? '&page='. ($page - 1) : '')), 'prev');
+				$this->document->addLink($this->url->link('product/category', 'path=' . $category_info['category_id'] . (($page - 2) ? '&page=' . ($page - 1) : '')), 'prev');
 			}
 
 			if ($limit && ceil($product_total / $limit) > $page) {
-			    $this->document->addLink($this->url->link('product/category', 'path=' . $category_info['category_id'] . '&page='. ($page + 1)), 'next');
+				$this->document->addLink($this->url->link('product/category', 'path=' . $category_info['category_id'] . '&page=' . ($page + 1)), 'next');
 			}
 
 			$data['sort'] = $sort;

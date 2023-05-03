@@ -1,4 +1,5 @@
 <?php
+
 class ControllerCatalogReview extends Controller {
 	private $error = array();
 

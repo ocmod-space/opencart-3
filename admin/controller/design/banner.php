@@ -1,4 +1,5 @@
 <?php
+
 class ControllerDesignBanner extends Controller {
 	private $error = array();
 

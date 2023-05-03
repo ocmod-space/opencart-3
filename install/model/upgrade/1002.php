@@ -1,4 +1,5 @@
 <?php
+
 class ModelUpgrade1002 extends Model {
 	public function upgrade() {
 		// setting

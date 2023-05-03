@@ -1,4 +1,5 @@
 <?php
+
 // Version
 define('VERSION', '3.0.3.8');
 
@@ -10,6 +11,7 @@ if (is_file('config.php')) {
 // Install
 if (!defined('DIR_APPLICATION')) {
 	header('Location: install/index.php');
+
 	exit;
 }
 

@@ -1,4 +1,5 @@
 <?php
+
 class ModelLocalisationReturnAction extends Model {
 	public function addReturnAction($data) {
 		foreach ($data['return_action'] as $language_id => $value) {
@@ -12,7 +13,7 @@ class ModelLocalisationReturnAction extends Model {
 		}
 
 		$this->cache->delete('return_action');
-		
+
 		return $return_action_id;
 	}
 

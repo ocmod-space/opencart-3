@@ -1,4 +1,5 @@
 <?php
+
 class ControllerAffiliateLogin extends Controller {
 	private $error = array();
 
@@ -115,7 +116,7 @@ class ControllerAffiliateLogin extends Controller {
 				$this->model_account_customer->deleteLoginAttempts($this->request->post['email']);
 			}
 		}
-		
+
 		return !$this->error;
 	}
 }

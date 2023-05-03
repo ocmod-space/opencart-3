@@ -1,4 +1,5 @@
 <?php
+
 class ControllerExtensionCaptchaBasic extends Controller {
 	private $error = array();
 
@@ -16,7 +17,7 @@ class ControllerExtensionCaptchaBasic extends Controller {
 
 			$this->response->redirect($this->url->link('marketplace/extension', 'user_token=' . $this->session->data['user_token'] . '&type=captcha', true));
 		}
-		
+
 		if (isset($this->error['warning'])) {
 			$data['error_warning'] = $this->error['warning'];
 		} else {

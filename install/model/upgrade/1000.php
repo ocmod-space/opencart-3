@@ -1,4 +1,5 @@
 <?php
+
 class ModelUpgrade1000 extends Model {
 	public function upgrade() {
 		// This is a generic upgrade script.
@@ -20,7 +21,7 @@ class ModelUpgrade1000 extends Model {
 		$status = false;
 
 		// Get only the create statements
-		foreach($lines as $line) {
+		foreach ($lines as $line) {
 			// Set any prefix
 			$line = str_replace("DROP TABLE IF EXISTS `oc_", "DROP TABLE IF EXISTS `" . DB_PREFIX, $line);
 
@@ -60,7 +61,7 @@ class ModelUpgrade1000 extends Model {
 
 			preg_match_all('#`(\w[\w\d]*)`\s+((tinyint|smallint|mediumint|bigint|int|tinytext|text|mediumtext|longtext|tinyblob|blob|mediumblob|longblob|varchar|char|datetime|date|float|double|decimal|timestamp|time|year|enum|set|binary|varbinary)(\((.*)\))?){1}\s*(collate (\w+)\s*)?(unsigned\s*)?((NOT\s*NULL\s*)|(NULL\s*))?(auto_increment\s*)?(default \'([^\']*)\'\s*)?#i', $sql, $match);
 
-			foreach(array_keys($match[0]) as $key) {
+			foreach (array_keys($match[0]) as $key) {
 				$field_data[] = array(
 					'name'          => trim($match[1][$key]),
 					'type'          => strtoupper(trim($match[3][$key])),
@@ -81,12 +82,12 @@ class ModelUpgrade1000 extends Model {
 
 			if (isset($match[0])) {
 				preg_match_all('#`(\w[\w\d]*)`#', $match[0], $match);
-			} else{
+			} else {
 				$match = array();
 			}
 
 			if ($match) {
-				foreach($match[1] as $primary) {
+				foreach ($match[1] as $primary) {
 					$primary_data[] = $primary;
 				}
 			}
@@ -98,19 +99,19 @@ class ModelUpgrade1000 extends Model {
 
 			preg_match_all('#key\s*`\w[\w\d]*`\s*\(.*\)#i', $sql, $match);
 
-			foreach($match[0] as $key) {
+			foreach ($match[0] as $key) {
 				preg_match_all('#`(\w[\w\d]*)`#', $key, $match);
 
 				$indexes[] = $match;
 			}
 
-			foreach($indexes as $index) {
+			foreach ($indexes as $index) {
 				$key = '';
 
-				foreach($index[1] as $field) {
+				foreach ($index[1] as $field) {
 					if ($key == '') {
 						$key = $field;
-					} else{
+					} else {
 						$index_data[$key][] = $field;
 					}
 				}
@@ -121,7 +122,7 @@ class ModelUpgrade1000 extends Model {
 
 			preg_match_all('#(\w+)=\'?(\w+\~?\w+)\'?#', $sql, $option);
 
-			foreach(array_keys($option[0]) as $key) {
+			foreach (array_keys($option[0]) as $key) {
 				$option_data[$option[1][$key]] = $option[2][$key];
 			}
 
@@ -181,15 +182,14 @@ class ModelUpgrade1000 extends Model {
 				$i = 0;
 
 				foreach ($table['field'] as $field) {
-
 					// If field is not found create it
 					if (!in_array($field['name'], $table_old_data[$table['name']]['field_list'])) {
-
 						$status = true;
 						foreach ($table_old_data[$table['name']]['extended_field_data'] as $oldfield) {
 							if ($oldfield['Extra'] == 'auto_increment' && $field['autoincrement']) {
 								$sql = "ALTER TABLE `" . $table['name'] . "` CHANGE `" . $oldfield['Field'] . "` `" . $field['name'] . "` " . strtoupper($field['type']);
 								$status = false;
+
 								break;
 							}
 						}
@@ -302,7 +302,7 @@ class ModelUpgrade1000 extends Model {
 					}
 
 					if ($index_data) {
-						$this->db->query("ALTER TABLE `" . $table['name'] . "` ADD INDEX `$name` (" . implode(',', $index_data) . ")");
+						$this->db->query("ALTER TABLE `" . $table['name'] . "` ADD INDEX `{$name}` (" . implode(',', $index_data) . ")");
 					}
 				}
 

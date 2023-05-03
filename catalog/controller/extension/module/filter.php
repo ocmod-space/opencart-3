@@ -1,4 +1,5 @@
 <?php
+
 class ControllerExtensionModuleFilter extends Controller {
 	public function index() {
 		if (isset($this->request->get['path'])) {

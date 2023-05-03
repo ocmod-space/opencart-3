@@ -1,4 +1,5 @@
 <?php
+
 class ControllerCustomerCustomField extends Controller {
 	private $error = array();
 
@@ -177,33 +178,52 @@ class ControllerCustomerCustomField extends Controller {
 			switch ($result['type']) {
 				case 'select':
 					$type = $this->language->get('text_select');
+
 					break;
+
 				case 'radio':
 					$type = $this->language->get('text_radio');
+
 					break;
+
 				case 'checkbox':
 					$type = $this->language->get('text_checkbox');
+
 					break;
+
 				case 'input':
 					$type = $this->language->get('text_input');
+
 					break;
+
 				case 'text':
 					$type = $this->language->get('text_text');
+
 					break;
+
 				case 'textarea':
 					$type = $this->language->get('text_textarea');
+
 					break;
+
 				case 'file':
 					$type = $this->language->get('text_file');
+
 					break;
+
 				case 'date':
 					$type = $this->language->get('text_date');
+
 					break;
+
 				case 'datetime':
 					$type = $this->language->get('text_datetime');
+
 					break;
+
 				case 'time':
 					$type = $this->language->get('text_time');
+
 					break;
 			}
 

@@ -1,4 +1,5 @@
 <?php
+
 class ControllerExtensionModuleBestSeller extends Controller {
 	private $error = array();
 
