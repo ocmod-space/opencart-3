@@ -1,5 +1,18 @@
 # Change log (3.0.x.x)
 
+## 2023.05.29_1 [#ed199ee](https://github.com/opencart/opencart/commit/ed199ee957429ae0dda001a0820d31e8a2c515ea)
+### Fixed
+- Implicit backslashes escape.
+- Update pagination code in controllers:
+    - [PR #12252](https://github.com/opencart/opencart/pull/12252/files).
+    - [PR #12253](https://github.com/opencart/opencart/pull/12253/files).
+    - [PR #12254](https://github.com/opencart/opencart/pull/12254/files).
+    - [PR #12255](https://github.com/opencart/opencart/pull/12255/files).
+    - [PR #12257](https://github.com/opencart/opencart/pull/12257/files).
+    - [PR #12256](https://github.com/opencart/opencart/pull/12256/files).
+- Update city length check - [PR #12251](https://github.com/opencart/opencart/pull/12251/files).
+- Check if encryption negotiation failed - [PR #12321](https://github.com/opencart/opencart/pull/12321/files).
+
 ## 2023.04.29_1 [#f4dd6e0](https://github.com/opencart/opencart/commit/f4dd6e0b73721d4824361e684ac63c9a2955e320)
 ### Fixed
 - PHP files was beautifed to meet the [coding standards](https://github.com/opencart/opencart/wiki/Coding-standards).
