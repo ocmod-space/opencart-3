@@ -200,7 +200,7 @@ class ControllerAccountAddress extends Controller {
 
 			$data['addresses'][] = array(
 				'address_id' => $result['address_id'],
-				'address'    => str_replace(array("\r\n", "\r", "\n"), '<br />', preg_replace(array("/\\s\\s+/", "/\r\r+/", "/\n\n+/"), '<br />', trim(str_replace($find, $replace, $format)))),
+				'address'    => str_replace(array("\r\n", "\r", "\n"), '<br />', preg_replace(array("/\s\s+/", "/\r\r+/", "/\n\n+/"), '<br />', trim(str_replace($find, $replace, $format)))),
 				'update'     => $this->url->link('account/address/edit', 'address_id=' . $result['address_id'], true),
 				'delete'     => $this->url->link('account/address/delete', 'address_id=' . $result['address_id'], true)
 			);
