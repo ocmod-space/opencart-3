@@ -1,6 +1,6 @@
 # Change log (3.0.x.x)
 
-## 2023.06.05_1 [#ed199ee](https://github.com/opencart/opencart/commit/fd7e99cd231a96b55043b1ac14155c2525de05faa)
+## 2023.06.05_1 [#fd7e99c](https://github.com/opencart/opencart/commit/fd7e99cd23a96b55043b1ac14155c2525de05faa)
 ### Removed
 - No more AddThis services, see at https://www.addthis.com/
 
