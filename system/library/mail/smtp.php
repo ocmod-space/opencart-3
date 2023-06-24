@@ -40,7 +40,7 @@ class Smtp extends \stdClass {
 			$message = '--' . $boundary . PHP_EOL;
 			$message .= 'Content-Type: text/plain; charset="utf-8"' . PHP_EOL;
 			$message .= 'Content-Transfer-Encoding: base64' . PHP_EOL . PHP_EOL;
-			$message .= base64_encode($this->text) . PHP_EOL;
+			$message .= chunk_split(base64_encode($this->text)) . PHP_EOL;
 		} else {
 			$message = '--' . $boundary . PHP_EOL;
 			$message .= 'Content-Type: multipart/alternative; boundary="' . $boundary . '_alt"' . PHP_EOL . PHP_EOL;
@@ -49,15 +49,15 @@ class Smtp extends \stdClass {
 			$message .= 'Content-Transfer-Encoding: base64' . PHP_EOL . PHP_EOL;
 
 			if ($this->text) {
-				$message .= base64_encode($this->text) . PHP_EOL;
+				$message .= chunk_split(base64_encode($this->text)) . PHP_EOL;
 			} else {
-				$message .= base64_encode('This is a HTML email and your email client software does not support HTML email!') . PHP_EOL;
+				$message .= chunk_split(base64_encode('This is a HTML email and your email client software does not support HTML email!')) . PHP_EOL;
 			}
 
 			$message .= '--' . $boundary . '_alt' . PHP_EOL;
 			$message .= 'Content-Type: text/html; charset="utf-8"' . PHP_EOL;
 			$message .= 'Content-Transfer-Encoding: base64' . PHP_EOL . PHP_EOL;
-			$message .= base64_encode($this->html) . PHP_EOL;
+			$message .= chunk_split(base64_encode($this->html)) . PHP_EOL;
 			$message .= '--' . $boundary . '_alt--' . PHP_EOL;
 		}
 
@@ -198,14 +198,10 @@ class Smtp extends \stdClass {
 			foreach ($lines as $line) {
 				// $results = str_split($line, $length);
 				// see https://php.watch/versions/8.2/str_split-empty-string-empty-array
-				$results = ($line === '') ? array('') : str_split($line, $length);
+				$results = ($line === '') ? array('') : str_split($line, 998);
 
 				foreach ($results as $result) {
-					if (substr(PHP_OS, 0, 3) != 'WIN') {
-						fputs($handle, $result . "\r\n");
-					} else {
-						fputs($handle, str_replace("\n", "\r\n", $result) . "\r\n");
-					}
+					fputs($handle, $result . "\r\n");
 				}
 			}
 
