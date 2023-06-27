@@ -1,6 +1,10 @@
 # Change log (3.0.x.x)
 
 ## 2023.06.27_1 [#7423db3](https://github.com/opencart/opencart/commit/7423db3e1c86f041a6560d56dc6e0bfc57f94ba9)
+### Changed
+- Version in admin to 3.0.x.x
+
+## 2023.06.27_1 [#7423db3](https://github.com/opencart/opencart/commit/7423db3e1c86f041a6560d56dc6e0bfc57f94ba9)
 ### Updated
 - Bootstrap to 3.4.1
 - jQuery to 3.7.0
