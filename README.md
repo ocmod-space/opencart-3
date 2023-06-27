@@ -12,7 +12,7 @@ There are the following branches:
 - `3.0.x.x` - related to the [3.0.x.x_Maintenance](https://github.com/opencart/opencart/tree/3.0.x.x_Maintenance) branch. Requires PHP 7.4 or 8.x.
 
 ## Changes
-All changes are in [CHANGELOG.md](https://github.com/ocmod-space/opencart3-ce/blob/main/CHANGELOG.md). Links to the related commits in the original branches are present.
+All changes are in [CHANGELOG.md](https://github.com/ocmod-space/opencart3-ce/blob/3.0.x.x/CHANGELOG.md). Links to the related commits in the original branches are present.
 
 ## License
 [GNU General Public License version 3 (GPLv3)](https://github.com/ocmod-space/opencart3-ce/blob/main/LICENSE.md)

@@ -1,5 +1,16 @@
 # Change log (3.0.x.x)
 
+## 2023.06.27_1 [#7423db3](https://github.com/opencart/opencart/commit/7423db3e1c86f041a6560d56dc6e0bfc57f94ba9)
+### Updated
+- Bootstrap to 3.4.1
+- jQuery to 3.7.0
+- Vendor libraries
+
+## 2023.06.24_1
+### Fixed
+- Fixed SMTP line lengths [PR #12384](https://github.com/opencart/opencart/pull/12384)
+- Match summernote editor default fontsize with the ones on the corresponding frontend pages [PR #12385](https://github.com/opencart/opencart/pull/12385)
+
 ## 2023.06.05_1 [#fd7e99c](https://github.com/opencart/opencart/commit/fd7e99cd23a96b55043b1ac14155c2525de05faa)
 ### Removed
 - No more AddThis services, see at https://www.addthis.com/
