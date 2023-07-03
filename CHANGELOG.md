@@ -1,5 +1,9 @@
 # Change log (3.0.x.x)
 
+## 2023.07.03_1 [#1da13c6](https://github.com/opencart/opencart/commit/1da13c63a99dd9e8a2ee35e004874925363ed6bd)
+### Changed
+- Twig docs link [PR #12156](https://github.com/opencart/opencart/pull/12156)
+
 ## 2023.06.27_1 [#7423db3](https://github.com/opencart/opencart/commit/7423db3e1c86f041a6560d56dc6e0bfc57f94ba9)
 ### Changed
 - Version in admin to 3.0.x.x
