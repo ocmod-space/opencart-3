@@ -1,5 +1,9 @@
 # Change log (3.0.x.x)
 
+## 2023.07.10_1 [#cb03189](https://github.com/opencart/opencart/commit/cb03189aca150337be0668193199897de4bb01e6)
+### Fixed
+- Bootstrap popover [PR #12463](https://github.com/opencart/opencart/pull/12463)
+
 ## 2023.07.05_1 [#1da13c6](https://github.com/opencart/opencart/commit/1da13c63a99dd9e8a2ee35e004874925363ed6bd)
 ### Fixed
 - Fix the admin map when the payment address is disabled [#4b2e195](https://github.com/opencartbot/opencart/commit/4b2e195ba0e1a15fd1fc49e32ab4ff8d9316d419)
