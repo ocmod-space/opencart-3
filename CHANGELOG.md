@@ -1,5 +1,9 @@
 # Change log (3.0.x.x)
 
+## 2023.07.13_1 [#e722a90](https://github.com/opencart/opencart/commit/e722a901520c359347104d5a63869a597bcdaf33)
+### Fixed
+- Filemanager [PR #12491](https://github.com/opencart/opencart/pull/12491)
+
 ## 2023.07.10_1 [#cb03189](https://github.com/opencart/opencart/commit/cb03189aca150337be0668193199897de4bb01e6)
 ### Fixed
 - Bootstrap popover [PR #12463](https://github.com/opencart/opencart/pull/12463)
