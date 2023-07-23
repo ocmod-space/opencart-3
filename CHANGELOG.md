@@ -1,5 +1,9 @@
 # Change log (3.0.x.x)
 
+## 2023.07.23_1 [#299283a](https://github.com/opencart/opencart/commit/299283a8f1dc5d91e0534729ba0678a8ec82996c)
+### Fixed
+-  deprecation error fixes [PR #12519](https://github.com/opencart/opencart/pull/12519)
+
 ## 2023.07.13_1 [#e722a90](https://github.com/opencart/opencart/commit/e722a901520c359347104d5a63869a597bcdaf33)
 ### Fixed
 - Filemanager [PR #12491](https://github.com/opencart/opencart/pull/12491)
