@@ -3,16 +3,12 @@
 ## Overview
 OpenCart is a free open source ecommerce platform for online merchants. OpenCart provides a professional and reliable foundation from which to build a successful online store.
 
-## Description
+## Branches
 There are the following branches:
-- `main` - this is the OC 3.0.3.8 release, it is needed purely to control changes in the "customized" branches.
+- `3.0.x.x` - related to the [3.0.x.x_Maintenance](https://github.com/opencart/opencart/tree/3.0.x.x_Maintenance) branch. Requires PHP versions - 7.4/8.x.
+- `3.0.3.8` - Last official release. Requires PHP versions - 7.4.
 
-*Customized* branches (removed "redundant" modules, fixed to meet the [coding standards](https://github.com/opencart/opencart/wiki/Coding-standards), etc):
-- `3.0.3.8` - Requires PHP 7.4.
-- `3.0.x.x` - related to the [3.0.x.x_Maintenance](https://github.com/opencart/opencart/tree/3.0.x.x_Maintenance) branch. Requires PHP 7.4 or 8.x.
-
-## Changes
-All changes are in [CHANGELOG.md](https://github.com/ocmod-space/opencart3-ce/blob/3.0.x.x/CHANGELOG.md). Links to the related commits in the original branches are present.
+Branches are *customized* - removed *redundant* modules, code fixed to conform to the [coding standards](https://github.com/opencart/opencart/wiki/Coding-standards), etc. Otherwise, branch `3.0.3.8` is unchanged and remains consistent with the release version, fixes and updates are being made to branch `3.0.x.x`. All changes are in [CHANGELOG.md](https://github.com/ocmod-space/opencart3-ce/blob/3.0.x.x/CHANGELOG.md), links to the related commits in the original branch [3.0.x.x_Maintenance](https://github.com/opencart/opencart/tree/3.0.x.x_Maintenance) are present.
 
 ## License
 [GNU General Public License version 3 (GPLv3)](https://github.com/ocmod-space/opencart3-ce/blob/main/LICENSE.md)
