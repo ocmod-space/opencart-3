@@ -1,8 +1,8 @@
 # Change log (3.0.x.x)
 
-## 2023.07.23_1 [#299283a](https://github.com/opencart/opencart/commit/299283a8f1dc5d91e0534729ba0678a8ec82996c)
+## 2023.08.02_1 [#299283a](https://github.com/opencart/opencart/commit/299283a8f1dc5d91e0534729ba0678a8ec82996c)
 ### Updated
--  `oc_geo_zone` table
+-  `oc_zone` table - added tax enclave entries for Germany, Swiss, Austria and Greece into the zone table.
 
 ## 2023.07.23_1 [#299283a](https://github.com/opencart/opencart/commit/299283a8f1dc5d91e0534729ba0678a8ec82996c)
 ### Fixed
