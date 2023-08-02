@@ -1,6 +1,10 @@
 # Change log (3.0.x.x)
 
 ## 2023.07.23_1 [#299283a](https://github.com/opencart/opencart/commit/299283a8f1dc5d91e0534729ba0678a8ec82996c)
+### Updated
+-  `oc_geo_zone` table
+
+## 2023.07.23_1 [#299283a](https://github.com/opencart/opencart/commit/299283a8f1dc5d91e0534729ba0678a8ec82996c)
 ### Fixed
 -  deprecation error fixes [PR #12519](https://github.com/opencart/opencart/pull/12519)
 
