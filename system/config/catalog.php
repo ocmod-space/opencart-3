@@ -44,14 +44,14 @@ $_['action_event'] = array(
 	'controller/*/before' => array(
 		'event/language/before'
 	),
-	'controller/*/after' => array(
+	'controller/*/after'  => array(
 		'event/language/after'
 	),
-	'view/*/before' => array(
+	'view/*/before'       => array(
 		500 => 'event/theme',
 		998 => 'event/language',
 	),
-	'language/*/after' => array(
+	'language/*/after'    => array(
 		'event/translation'
 	),
 	//'view/*/before' => array(

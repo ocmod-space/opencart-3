@@ -37,14 +37,14 @@ $_['action_event'] = array(
 	'controller/*/before' => array(
 		'event/language/before'
 	),
-	'controller/*/after' => array(
+	'controller/*/after'  => array(
 		'event/language/after'
 	),
-	'view/*/before' => array(
+	'view/*/before'       => array(
 		999  => 'event/language',
 		1000 => 'event/theme'
 	),
-	'view/*/before' => array(
+	'view/*/before'       => array(
 		'event/language'
 	)
 );
