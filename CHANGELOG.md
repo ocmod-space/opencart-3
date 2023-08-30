@@ -1,5 +1,9 @@
 # Change log (3.0.x.x)
 
+## 2023.08.30_1 [#30735b3](https://github.com/opencart/opencart/commit/30735b314f953ffdf582e57aba1387fc6c0050ab)
+### Fixed
+-  Bugfix language editor
+
 ## 2023.08.02_1 [#299283a](https://github.com/opencart/opencart/commit/299283a8f1dc5d91e0534729ba0678a8ec82996c)
 ### Updated
 -  `oc_zone` table - added tax enclave entries for Germany, Swiss, Austria and Greece into the zone table.
@@ -24,7 +28,7 @@
 ### Changed
 - Twig docs link [PR #12156](https://github.com/opencart/opencart/pull/12156)
 
-## 2023.06.27_1 [#7423db3](https://github.com/opencart/opencart/commit/7423db3e1c86f041a6560d56dc6e0bfc57f94ba9)
+## 2023.06.27_2 [#7423db3](https://github.com/opencart/opencart/commit/7423db3e1c86f041a6560d56dc6e0bfc57f94ba9)
 ### Changed
 - Version in admin to 3.0.x.x
 
