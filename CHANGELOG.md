@@ -1,8 +1,12 @@
 # Change log (3.0.x.x)
 
+## 2023.09.05_1 [#30735b3](https://github.com/opencart/opencart/commit/30735b314f953ffdf582e57aba1387fc6c0050ab)
+### Fixed
+-  Fixed error displaying guest shipping [PR #12672](https://github.com/opencart/opencart/pull/12672)
+
 ## 2023.08.30_1 [#30735b3](https://github.com/opencart/opencart/commit/30735b314f953ffdf582e57aba1387fc6c0050ab)
 ### Fixed
--  Bugfix language editor
+-  Update translation_form.twig [PR #12640](https://github.com/opencart/opencart/pull/12640)
 
 ## 2023.08.02_1 [#299283a](https://github.com/opencart/opencart/commit/299283a8f1dc5d91e0534729ba0678a8ec82996c)
 ### Updated
