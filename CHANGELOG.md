@@ -1,20 +1,24 @@
 # Change log (3.0.x.x)
 
+## 2023.09.22_1 [#30735b3](https://github.com/opencart/opencart/commit/30735b314f953ffdf582e57aba1387fc6c0050ab)
+### Fixed
+- Error caused by voucher order because it has not shipping country.
+
 ## 2023.09.05_1 [#30735b3](https://github.com/opencart/opencart/commit/30735b314f953ffdf582e57aba1387fc6c0050ab)
 ### Fixed
--  Fixed error displaying guest shipping [PR #12672](https://github.com/opencart/opencart/pull/12672)
+- Fixed error displaying guest shipping [PR #12672](https://github.com/opencart/opencart/pull/12672)
 
 ## 2023.08.30_1 [#30735b3](https://github.com/opencart/opencart/commit/30735b314f953ffdf582e57aba1387fc6c0050ab)
 ### Fixed
--  Update translation_form.twig [PR #12640](https://github.com/opencart/opencart/pull/12640)
+- Update translation_form.twig [PR #12640](https://github.com/opencart/opencart/pull/12640)
 
 ## 2023.08.02_1 [#299283a](https://github.com/opencart/opencart/commit/299283a8f1dc5d91e0534729ba0678a8ec82996c)
 ### Updated
--  `oc_zone` table - added tax enclave entries for Germany, Swiss, Austria and Greece into the zone table.
+- `oc_zone` table - added tax enclave entries for Germany, Swiss, Austria and Greece into the zone table.
 
 ## 2023.07.23_1 [#299283a](https://github.com/opencart/opencart/commit/299283a8f1dc5d91e0534729ba0678a8ec82996c)
 ### Fixed
--  deprecation error fixes [PR #12519](https://github.com/opencart/opencart/pull/12519)
+- deprecation error fixes [PR #12519](https://github.com/opencart/opencart/pull/12519)
 
 ## 2023.07.13_1 [#e722a90](https://github.com/opencart/opencart/commit/e722a901520c359347104d5a63869a597bcdaf33)
 ### Fixed
