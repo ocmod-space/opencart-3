@@ -1,5 +1,11 @@
 # Change log (3.0.x.x)
 
+## 2023.10.16_1 [#cfae395](https://github.com/opencart/opencart/commit/cfae395219c070b132cc10aa9522ad9b052d52e5)
+### Changed
+- Synced with the [3.0.3.9](https://github.com/ocmod-space/opencart/releases/tag/3.0.3.9) release
+### Fixed
+- Minor errors and typos.
+
 ## 2023.09.22_1 [#30735b3](https://github.com/opencart/opencart/commit/30735b314f953ffdf582e57aba1387fc6c0050ab)
 ### Fixed
 - Error caused by voucher order because it has not shipping country.
