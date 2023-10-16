@@ -6,7 +6,7 @@ OpenCart is a free open source ecommerce platform for online merchants. OpenCart
 ## Description
 Here is a customized version of OpenCart [3.0.x.x](https://github.com/opencart/opencart/tree/3.0.x.x) branch.
 Changes:
-- removed some *redundant* modules (from payment, shipping etc.) Full list of deleted files is [*here*](deleted.txt).
+- removed some *redundant* modules (mainly from payment and shipping), google shopping, etc. Full list of deleted files is [*here*](deleted.txt).
 - php code have been fixed to meet the OC [coding standards](https://github.com/opencart/opencart/wiki/Coding-standards) etc.
 
 ## License
