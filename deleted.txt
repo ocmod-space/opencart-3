@@ -195,6 +195,7 @@ admin/view/template/extension/advertise/google.twig
 admin/view/template/extension/advertise/
 admin/view/template/extension/fraud/maxmind_info.twig
 admin/view/template/extension/fraud/maxmind.twig
+admin/view/template/extension/extension/advertise.twig
 admin/view/template/extension/module/amazon_login.twig
 admin/view/template/extension/module/amazon_pay.twig
 admin/view/template/extension/module/divido_calculator.twig
