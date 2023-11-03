@@ -1,5 +1,10 @@
 # Change log (3.0.x.x)
 
+## 2023.11.03_1 [#b2bb6f0](https://github.com/opencart/opencart/commit/b2bb6f07a8f9c53639f708933b8c6cef14631b95)
+### Fixed
+- Leading space to prevent appending to the password restore link [PR #12223](https://github.com/opencart/opencart/pull/12223/commits/975cffca9866518aa5c3101dcc49d92c1d9f40aa).
+- Currency rates refresh [#888f819](https://github.com/opencart/opencart/commit/888f819cfe79d7eace05c400a4beed1328c8ae0d).
+
 ## 2023.10.16_1 [#cfae395](https://github.com/opencart/opencart/commit/cfae395219c070b132cc10aa9522ad9b052d52e5)
 ### Changed
 - Synced with the [3.0.3.9](https://github.com/ocmod-space/opencart/releases/tag/3.0.3.9) release
