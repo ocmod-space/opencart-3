@@ -1,5 +1,9 @@
 # Change log (3.0.x.x)
 
+## 2023.11.14_1 [#b2bb6f0](https://github.com/opencart/opencart/commit/b2bb6f07a8f9c53639f708933b8c6cef14631b95)
+### Fixed
+- typo in `opencart.sql` related to the currency module permissions
+
 ## 2023.11.03_1 [#b2bb6f0](https://github.com/opencart/opencart/commit/b2bb6f07a8f9c53639f708933b8c6cef14631b95)
 ### Fixed
 - Leading space to prevent appending to the password restore link [PR #12223](https://github.com/opencart/opencart/pull/12223/commits/975cffca9866518aa5c3101dcc49d92c1d9f40aa).
