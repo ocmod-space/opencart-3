@@ -2,7 +2,8 @@
 
 ## 2023.11.18_1 [#78d735f](https://github.com/opencart/opencart/commit/78d735f36e43dfbba61319ab8dcd32ce57b7724f)
 ### Fixed
-- DB_PREFIX  [PR #12975](https://github.com/opencart/opencart/pull/12975/commits/09873d2052b003d27ec55da63e5b362d2dfb1eb4)
+- DB_PREFIX [PR #12975](https://github.com/opencart/opencart/pull/12975/commits/09873d2052b003d27ec55da63e5b362d2dfb1eb4)
+- robots.txt
 
 ## 2023.11.14_1 [#b2bb6f0](https://github.com/opencart/opencart/commit/b2bb6f07a8f9c53639f708933b8c6cef14631b95)
 ### Fixed
