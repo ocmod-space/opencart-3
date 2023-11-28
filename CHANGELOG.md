@@ -1,9 +1,14 @@
 # Change log (3.0.x.x)
 
+## 2023.11.28_2 [#a71bae0](https://github.com/opencart/opencart/commit/a71bae0725154830963ab83ced69fca9179ba87f)
+### Fixed
+- Added language variable 'text_no_results' for Manufacturer [PR #13030](https://github.com/opencart/opencart/pull/13030/commits/92fe313c594dded1980a4e3fe1228b93f021b659)
+- Wrong message on Manufacturer List [PR #13029](https://github.com/opencart/opencart/pull/13029/commits/333d534bad96cd2c816e0a04c04fe4dde0a8ddb3)
+
 ## 2023.11.28_1 [#402559b](https://github.com/opencart/opencart/commit/402559b4ad68624d6d6cd5c21e0f978aee3b07bd)
 ### Fixed
 - PHP Unknown:  preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in /system/engine/action.php on line 65 [PR #13019](https://github.com/opencart/opencart/pull/13019/commits/03da248d50932f78fc82b84efc37ba1430f79a2b)
-- attribute automcomplete fix [PR #12990](https://github.com/opencart/opencart/pull/12990/commits/fa43add7c0646f14eea8ba04fe783c3c796a49bf#)
+- attribute automcomplete fix [PR #12990](https://github.com/opencart/opencart/pull/12990/commits/fa43add7c0646f14eea8ba04fe783c3c796a49bf)
 
 ## 2023.11.18_1 [#78d735f](https://github.com/opencart/opencart/commit/78d735f36e43dfbba61319ab8dcd32ce57b7724f)
 ### Fixed
