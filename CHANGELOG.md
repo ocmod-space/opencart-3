@@ -1,5 +1,11 @@
 # Change log (3.0.x.x)
 
+## 2024.01.06_1 [#8a3c27d](https://github.com/opencart/opencart/commit/8a3c27de562613bab5779647cc3d934bea586098)
+### Fixed
+- Caught class Template\Exception not found [PR #13425](https://github.com/opencart/opencart/pull/13425/commits/5766cb1fa9a7e11221e655665b8c5e23e039e558).
+- Wrong use of concat in recurring.php [#47ccb9e](https://github.com/opencart/opencart/commit/47ccb9ec604acd8b4bd120b0ab6e24640c7dd1cb).
+- Removed duplicated values from array - utf8 helper [#022415c](https://github.com/opencart/opencart/commit/022415cfa9c49145dd0cd154a9ecbdfcd1e248ea).
+
 ## 2023.12.08_1 [#a71bae0](https://github.com/opencart/opencart/commit/a71bae0725154830963ab83ced69fca9179ba87f)
 ### Fixed
 - Redirect protection [PR #13095](https://github.com/opencart/opencart/pull/13095/commits/c6f546321c984ce89fcdd4af0ef86e5af6ce7e8d).
