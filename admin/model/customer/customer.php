@@ -328,6 +328,8 @@ class ModelCustomerCustomer extends Model {
 			$sql .= " WHERE " . implode(" AND ", $implode);
 		}
 
+		$query = $this->db->query($sql);
+
 		return $query->row['total'];
 	}
 

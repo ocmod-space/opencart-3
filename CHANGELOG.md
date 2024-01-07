@@ -1,5 +1,15 @@
 # Change log (3.0.x.x)
 
+## 2024.01.07_1 [#f2ae349](https://github.com/opencart/opencart/commit/f2ae349e6e949bb100460ae1ed15534c9e6888f2)
+### Fixed
+- $query customer model [#13445](https://github.com/opencart/opencart/pull/13445/commits/ed39c844f8dda2eb540411ff0d77f4e7f37643e3).
+- Undefined variable: $data- upload model [#13436](https://github.com/opencart/opencart/pull/13436/commits/4e9217897756e9f53adfecab02c05a0121353253).
+- Undefined variable: $data - router controller [#13439](https://github.com/opencart/opencart/pull/13439/commits/5742f0fd1a74a8459323f2b18e72eae6b6dcfd50).
+- Caught class DB\mysqli_sql_exception not found. mysqli.php [#13432](https://github.com/opencart/opencart/pull/13432/commits/c26c891f8f587cf487ee40715a792131b258e603).
+- Remove Ref check from proxy.php [#13426](https://github.com/opencart/opencart/pull/13426/commits/aa30271897f82bc5bfd6eb685510835fef75e4bd).
+### Removed
+- fraudlabspro extension.
+
 ## 2024.01.06_1 [#8a3c27d](https://github.com/opencart/opencart/commit/8a3c27de562613bab5779647cc3d934bea586098)
 ### Fixed
 - Wrong use of concat in recurring.php [#47ccb9e](https://github.com/opencart/opencart/commit/47ccb9ec604acd8b4bd120b0ab6e24640c7dd1cb).
