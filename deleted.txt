@@ -1,6 +1,7 @@
 admin/controller/extension/advertise/google.php
 admin/controller/extension/advertise/
 admin/controller/extension/extension/advertise.php
+admin/controller/extension/fraud/fraudlabspro.php
 admin/controller/extension/fraud/maxmind.php
 admin/controller/extension/module/amazon_login.php
 admin/controller/extension/module/amazon_pay.php
@@ -71,6 +72,7 @@ admin/controller/extension/shipping/usps.php
 admin/controller/extension/total/klarna_fee.php
 admin/language/en-gb/extension/advertise/google.php
 admin/language/en-gb/extension/extension/advertise.php
+admin/language/en-gb/extension/fraud/fraudlabspro.php
 admin/language/en-gb/extension/fraud/maxmind.php
 admin/language/en-gb/extension/module/amazon_login.php
 admin/language/en-gb/extension/module/amazon_pay.php
@@ -145,6 +147,7 @@ admin/language/en-gb/extension/shipping/usps.php
 admin/language/en-gb/extension/total/klarna_fee.php
 admin/model/extension/advertise/google.php
 admin/model/extension/advertise/
+admin/model/extension/fraud/fraudlabspro.php
 admin/model/extension/fraud/maxmind.php
 admin/model/extension/module/paypal_smart_button.php
 admin/model/extension/payment/amazon_login_pay.php
@@ -193,6 +196,8 @@ admin/view/template/extension/advertise/google_shipping_taxes.twig
 admin/view/template/extension/advertise/google_steps.twig
 admin/view/template/extension/advertise/google.twig
 admin/view/template/extension/advertise/
+admin/view/template/extension/fraud/fraudlabspro_info.twig
+admin/view/template/extension/fraud/fraudlabspro.twig
 admin/view/template/extension/fraud/maxmind_info.twig
 admin/view/template/extension/fraud/maxmind.twig
 admin/view/template/extension/extension/advertise.twig
@@ -451,6 +456,7 @@ catalog/model/extension/advertise/google.php
 catalog/model/extension/advertise/
 catalog/model/extension/credit_card/squareup.php
 catalog/model/extension/credit_card/
+catalog/model/extension/fraud/fraudlabspro.php
 catalog/model/extension/fraud/maxmind.php
 catalog/model/extension/module/amazon_login.php
 catalog/model/extension/module/laybuy_layout.php
