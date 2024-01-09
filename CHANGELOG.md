@@ -1,5 +1,11 @@
 # Change log (3.0.x.x)
 
+## 2024.01.09_1 [#78c75da](https://github.com/opencart/opencart/commit/78c75dabb17d9aa3a16eab4504b3b3c5bb98d25f)
+### Fixed
+- duplicate key in `system/config/admin.php`, template_code argument in `controller/admin/event/language.php missing` [#13483](https://github.com/opencart/opencart/pull/13483/commits/8feaecb2a85f7b452aa5989068f7c58c84e76bfe).
+- missing return `system/config/admin.php`, template_code argument in `controller/admin/event/language.php missing` [#13482](https://github.com/opencart/opencart/pull/13482/commits/014673c33f2d67decdb9e68e7145d66fb67a1d5d).
+- `admin/controller/startup/startup.php`, `catalog/controller/startup/startup.php`
+
 ## 2024.01.07_1 [#f2ae349](https://github.com/opencart/opencart/commit/f2ae349e6e949bb100460ae1ed15534c9e6888f2)
 ### Fixed
 - $query customer model [#13445](https://github.com/opencart/opencart/pull/13445/commits/ed39c844f8dda2eb540411ff0d77f4e7f37643e3).
