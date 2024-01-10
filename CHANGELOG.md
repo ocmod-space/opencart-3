@@ -1,5 +1,9 @@
 # Change log (3.0.x.x)
 
+## 2024.01.10_1 [#8fafedf](https://github.com/opencart/opencart/commit/8fafedfe51127fc9d1d153960ca159cf25113028)
+### Fixed
+- redundant writings to log
+
 ## 2024.01.09_1 [#78c75da](https://github.com/opencart/opencart/commit/78c75dabb17d9aa3a16eab4504b3b3c5bb98d25f)
 ### Fixed
 - duplicate key in `system/config/admin.php`, template_code argument in `controller/admin/event/language.php missing` [#13483](https://github.com/opencart/opencart/pull/13483/commits/8feaecb2a85f7b452aa5989068f7c58c84e76bfe).
