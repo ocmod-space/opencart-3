@@ -20,12 +20,6 @@ class ComposerStaticInit505ae6f2a3616473de90938541c4614d
     );
 
     public static $prefixLengthsPsr4 = array (
-        'W' => 
-        array (
-            'WePay\\' => 6,
-            'WeMini\\' => 7,
-            'WeChat\\' => 7,
-        ),
         'T' => 
         array (
             'Twig\\' => 5,
@@ -53,33 +47,9 @@ class ComposerStaticInit505ae6f2a3616473de90938541c4614d
             'GuzzleHttp\\Promise\\' => 19,
             'GuzzleHttp\\' => 11,
         ),
-        'C' => 
-        array (
-            'Cardinity\\' => 10,
-        ),
-        'B' => 
-        array (
-            'Braintree\\' => 10,
-        ),
-        'A' => 
-        array (
-            'AliPay\\' => 7,
-        ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'WePay\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/zoujingli/wechat-developer/WePay',
-        ),
-        'WeMini\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/zoujingli/wechat-developer/WeMini',
-        ),
-        'WeChat\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/zoujingli/wechat-developer/WeChat',
-        ),
         'Twig\\' => 
         array (
             0 => __DIR__ . '/..' . '/twig/twig/src',
@@ -140,35 +110,9 @@ class ComposerStaticInit505ae6f2a3616473de90938541c4614d
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
         ),
-        'Cardinity\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/cardinity/cardinity-sdk-php/src',
-        ),
-        'Braintree\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/braintree/braintree_php/lib/Braintree',
-        ),
-        'AliPay\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/zoujingli/wechat-developer/AliPay',
-        ),
     );
 
     public static $prefixesPsr0 = array (
-        'D' => 
-        array (
-            'Divido' => 
-            array (
-                0 => __DIR__ . '/..' . '/divido/divido-php/lib',
-            ),
-        ),
-        'B' => 
-        array (
-            'Braintree' => 
-            array (
-                0 => __DIR__ . '/..' . '/braintree/braintree_php/lib',
-            ),
-        ),
     );
 
     public static $classMap = array (
@@ -179,7 +123,6 @@ class ComposerStaticInit505ae6f2a3616473de90938541c4614d
         'Stringable' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
         'UnhandledMatchError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php',
         'ValueError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/ValueError.php',
-        'We' => __DIR__ . '/..' . '/zoujingli/wechat-developer/We.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

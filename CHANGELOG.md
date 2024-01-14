@@ -1,5 +1,11 @@
 # Change log (3.0.x.x)
 
+## 2024.01.14_1 [#e201199](https://github.com/opencart/opencart/commit/e20119971e7ee9dde7fe323eb7d1df2f6e281af6)
+### Added
+-  Hint classes loaded during framework bootup [#13555](https://github.com/opencart/opencart/pull/13555/commits/c624084612e40fb372c2461e55d3bf4ff5a42a8c).
+### Fixed
+- Composer dependencies.
+
 ## 2024.01.10_1 [#8fafedf](https://github.com/opencart/opencart/commit/8fafedfe51127fc9d1d153960ca159cf25113028)
 ### Fixed
 - redundant writings to log

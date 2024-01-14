@@ -6,9 +6,6 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname(dirname(dirname(dirname($vendorDir))));
 
 return array(
-    'WePay\\' => array($vendorDir . '/zoujingli/wechat-developer/WePay'),
-    'WeMini\\' => array($vendorDir . '/zoujingli/wechat-developer/WeMini'),
-    'WeChat\\' => array($vendorDir . '/zoujingli/wechat-developer/WeChat'),
     'Twig\\' => array($vendorDir . '/twig/twig/src'),
     'Symfony\\Polyfill\\Php80\\' => array($vendorDir . '/symfony/polyfill-php80'),
     'Symfony\\Polyfill\\Php72\\' => array($vendorDir . '/symfony/polyfill-php72'),
@@ -24,7 +21,4 @@ return array(
     'GuzzleHttp\\Psr7\\' => array($vendorDir . '/guzzlehttp/psr7/src'),
     'GuzzleHttp\\Promise\\' => array($vendorDir . '/guzzlehttp/promises/src'),
     'GuzzleHttp\\' => array($vendorDir . '/guzzlehttp/guzzle/src'),
-    'Cardinity\\' => array($vendorDir . '/cardinity/cardinity-sdk-php/src'),
-    'Braintree\\' => array($vendorDir . '/braintree/braintree_php/lib/Braintree'),
-    'AliPay\\' => array($vendorDir . '/zoujingli/wechat-developer/AliPay'),
 );
