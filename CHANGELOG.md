@@ -1,11 +1,13 @@
 # Change log (3.0.x.x)
 
-## 2024.02.01_1 [#e201199](https://github.com/opencart/opencart/commit/e20119971e7ee9dde7fe323eb7d1df2f6e281af6)
+## 2024.02.01_1 [#43a4c3b](https://github.com/opencart/opencart/commit/43a4c3bd472ac1d3094764a947ad424e96398409)
 ### Added
 - phpstan 1.10.57
 - Add helpers for guessing what classes magic model properties should resolve to (https://github.com/opencart/opencart/commit/e20119971e7ee9dde7fe323eb7d1df2f6e281af6
 ### Fixed
 - extensions uninstall fixes: remove permissions [#13602](https://github.com/opencart/opencart/pull/13602/)
+### Updated
+- `system/library/db/pgsql.php`
 
 ## 2024.01.14_1 [#e201199](https://github.com/opencart/opencart/commit/e20119971e7ee9dde7fe323eb7d1df2f6e281af6)
 ### Added
