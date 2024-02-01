@@ -2,7 +2,6 @@
 
 namespace Tools\PHPStan;
 
-use Registry;
 use PHPStan\Broker\Broker;
 use PHPStan\Reflection\ClassReflection;
 use PHPStan\Reflection\PropertiesClassReflectionExtension;
@@ -11,6 +10,7 @@ use PHPStan\Type\Generic\GenericObjectType;
 use PHPStan\Type\NullType;
 use PHPStan\Type\ObjectType;
 use PHPStan\Type\TypeCombinator;
+use Registry;
 
 class RegistryPropertyReflectionExtension implements PropertiesClassReflectionExtension {
 	public function hasProperty(ClassReflection $classReflection, string $propertyName): bool {
@@ -30,7 +30,7 @@ class RegistryPropertyReflectionExtension implements PropertiesClassReflectionEx
 		$type = new NullType();
 		if ($broker->hasClass($className)) {
 			$found = new ObjectType($className);
-			$type = new GenericObjectType('\Proxy', [$found]);
+			$type = new GenericObjectType('\Proxy', array($found));
 			$type = TypeCombinator::addNull($type);
 		}
 
