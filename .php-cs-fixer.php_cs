@@ -210,7 +210,7 @@ return $config
 	->setFinder(PhpCsFixer\Finder::create()
 		->in(__DIR__)
 		->exclude(array(
-			__DIR__ . '/system/storage/vendor/',
+			__DIR__ . '/system/storage/vendor/', __DIR__ . '/tools/',
 		))
 		// ->append([
 		//     'file-to-include',
