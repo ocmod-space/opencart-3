@@ -10,7 +10,7 @@
  */
 
 /**
-* Registry class
+ * Registry class.
  *
  * @property Cache                         $cache
  * @property Cart\Cart                     $cart
@@ -35,12 +35,12 @@
  * @property Session                       $session
  * @property ?Squareup                     $squareup
  * @property Url                           $url
-*/
+ */
 final class Registry {
 	private $data = array();
 
 	/**
-	 * __get
+	 * __get.
 	 *
 	 * https://www.php.net/manual/en/language.oop5.overloading.php#object.get
 	 *
