@@ -43,7 +43,6 @@ class Document {
 	}
 
 	/**
-	 * @param string $description
 	 *
 	 * @return string
 	 */
