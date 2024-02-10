@@ -1,5 +1,27 @@
 # Change log (3.0.x.x)
 
+## 2024.02.10_1 [#bc6ed93](https://github.com/opencart/opencart/commit/bc6ed93123d1b8896234d11ab9d1a636d83dbc13)
+### Fixed
+- phpstan level 1 issues
+### Updated
+- symfony/polyfill-ctype (v1.27.0 => v1.29.0)
+- scssphp/scssphp (v1.11.0 => v1.12.1)
+- symfony/polyfill-php80 (v1.27.0 => v1.29.0)
+- symfony/polyfill-mbstring (v1.27.0 => v1.29.0)
+- twig/twig (v3.6.1 => v3.8.0)
+### Removed
+- Removing symfony/validator (v4.4.48)
+- Removing symfony/translation-contracts (v2.5.2)
+- Removing symfony/polyfill-php72 (v1.27.0)
+- Removing symfony/polyfill-intl-normalizer (v1.27.0)
+- Removing symfony/polyfill-intl-idn (v1.27.0)
+- Removing ralouphie/getallheaders (3.0.3)
+- Removing psr/http-message (1.1)
+- Removing guzzlehttp/psr7 (1.9.1)
+- Removing guzzlehttp/promises (1.5.3)
+- Removing guzzlehttp/oauth-subscriber (0.3.0)
+- Removing guzzlehttp/guzzle (6.5.8)
+
 ## 2024.02.01_1 [#43a4c3b](https://github.com/opencart/opencart/commit/43a4c3bd472ac1d3094764a947ad424e96398409)
 ### Added
 - phpstan 1.10.57
