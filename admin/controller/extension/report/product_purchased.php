@@ -1,6 +1,8 @@
 <?php
 
 class ControllerExtensionReportProductPurchased extends Controller {
+	private $error = array();
+
 	public function index() {
 		$this->load->language('extension/report/product_purchased');
 

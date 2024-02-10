@@ -1,6 +1,8 @@
 <?php
 
 class ControllerExtensionReportCustomerOrder extends Controller {
+	private $error = array();
+
 	public function index() {
 		$this->load->language('extension/report/customer_order');
 
