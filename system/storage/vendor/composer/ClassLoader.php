@@ -42,7 +42,7 @@ namespace Composer\Autoload;
  */
 class ClassLoader
 {
-   /** @var \Closure(string):void */
+    /** @var \Closure(string):void */
     private static $includeFile;
 
     /** @var ?string */
