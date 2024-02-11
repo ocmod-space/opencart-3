@@ -1,7 +1,7 @@
 <?php
 
-$out = [];
-$cleaning_list = [
+$out = array();
+$cleaning_list = array(
 	'admin/config-dist.php',
 	'install',
 	'tools',
@@ -14,7 +14,7 @@ $cleaning_list = [
 	'README.md',
 	'LICENSE.txt',
 	'phpstan.neon',
-];
+);
 
 function delete($dir) {
 	if (!file_exists($dir)) {
