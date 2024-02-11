@@ -644,3 +644,14 @@ system/storage/vendor/cardinity/
 system/storage/vendor/divido/
 system/storage/vendor/klarna/
 system/storage/vendor/zoujingli/
+system/storage/vendor/symfony/validator
+system/storage/vendor/symfony/translation-contracts
+system/storage/vendor/symfony/polyfill-php72
+system/storage/vendor/symfony/polyfill-intl-normalizer
+system/storage/vendor/symfony/polyfill-intl-idn
+system/storage/vendor/ralouphie/getallheaders
+system/storage/vendor/psr/http-message
+system/storage/vendor/guzzlehttp/psr7
+system/storage/vendor/guzzlehttp/promises
+system/storage/vendor/guzzlehttp/oauth-subscriber
+system/storage/vendor/guzzlehttp/guzzle
