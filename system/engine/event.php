@@ -23,8 +23,7 @@ class Event {
 	/**
 	 * Constructor.
 	 *
-	 * @param object $route
-	 * @param mixed  $registry
+	 * @param mixed $registry
 	 */
 	public function __construct($registry) {
 		$this->registry = $registry;
@@ -32,8 +31,8 @@ class Event {
 
 	/**
 	 * @param string $trigger
-	 * @param object $action
-	 * @param int    $priority
+	 * @param Action $action
+	 * @param int $priority
 	 */
 	public function register($trigger, Action $action, $priority = 0) {
 		$this->data[] = array(

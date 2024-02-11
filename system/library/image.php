@@ -185,7 +185,7 @@ class Image {
 	}
 
 	/**
-	 * @param string $watermark
+	 * @param object $watermark
 	 * @param string $position
 	 */
 	public function watermark($watermark, $position = 'bottomright') {
@@ -245,8 +245,8 @@ class Image {
 				break;
 		}
 
-		imagealphablending( $this->image, true);
-		imagesavealpha( $this->image, true);
+		imagealphablending($this->image, true);
+		imagesavealpha($this->image, true);
 		imagecopy($this->image, $watermark->getImage(), $watermark_pos_x, $watermark_pos_y, 0, 0, $watermark->getWidth(), $watermark->getHeight());
 
 		imagedestroy($watermark->getImage());
@@ -303,9 +303,9 @@ class Image {
 
 	/**
 	 * @param object $merge
-	 * @param object $x
-	 * @param object $y
-	 * @param object $opacity
+	 * @param int    $x
+	 * @param int    $y
+	 * @param int    $opacity
 	 */
 	private function merge($merge, $x = 0, $y = 0, $opacity = 100) {
 		imagecopymerge($this->image, $merge->getImage(), $x, $y, 0, 0, $merge->getWidth(), $merge->getHeight(), $opacity);

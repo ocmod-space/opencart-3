@@ -20,8 +20,7 @@ class Language {
 	/**
 	 * Constructor.
 	 *
-	 * @param string $file
-	 * @param mixed  $directory
+	 * @param mixed $directory
 	 */
 	public function __construct($directory = '') {
 		$this->directory = $directory;

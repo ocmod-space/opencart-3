@@ -20,8 +20,8 @@ class Session {
 	/**
 	 * Constructor.
 	 *
-	 * @param string $adaptor
-	 * @param object $registry
+	 * @param string        $adaptor
+	 * @param object|string $registry
 	 */
 	public function __construct($adaptor, $registry = '') {
 		$class = 'Session\\' . $adaptor;

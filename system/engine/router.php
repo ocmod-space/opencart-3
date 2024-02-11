@@ -20,23 +20,22 @@ final class Router {
 	/**
 	 * Constructor.
 	 *
-	 * @param object $route
-	 * @param mixed  $registry
+	 * @param mixed $registry
 	 */
 	public function __construct($registry) {
 		$this->registry = $registry;
 	}
 
 	/**
-	 * @param object $pre_action
+	 * @param Action $pre_action
 	 */
 	public function addPreAction(Action $pre_action) {
 		$this->pre_action[] = $pre_action;
 	}
 
 	/**
-	 * @param object $action
-	 * @param object $error
+	 * @param Action $action
+	 * @param Action $error
 	 */
 	public function dispatch(Action $action, Action $error) {
 		$this->error = $error;
@@ -57,7 +56,7 @@ final class Router {
 	}
 
 	/**
-	 * @param object $action
+	 * @param Action $action
 	 *
 	 * @return object
 	 */

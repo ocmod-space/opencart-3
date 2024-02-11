@@ -24,7 +24,7 @@ class Pagination {
 	public $text_prev = '&lt;';
 
 	/**
-	 * @return text
+	 * @return string
 	 */
 	public function render() {
 		$total = $this->total;
