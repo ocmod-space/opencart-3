@@ -43,7 +43,6 @@ class Document {
 	}
 
 	/**
-	 *
 	 * @return string
 	 */
 	public function getDescription() {
