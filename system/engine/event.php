@@ -32,7 +32,7 @@ class Event {
 	/**
 	 * @param string $trigger
 	 * @param Action $action
-	 * @param int $priority
+	 * @param int    $priority
 	 */
 	public function register($trigger, Action $action, $priority = 0) {
 		$this->data[] = array(
