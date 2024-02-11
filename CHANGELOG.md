@@ -1,5 +1,9 @@
 # Change log (3.0.x.x)
 
+## 2024.02.11_2 [#c458419](https://github.com/opencart/opencart/commit/c4584195a900250d52ba46e524ba71b7bdb8a495)
+### Fixed
+- Cache control headers
+
 ## 2024.02.11_1 [#bc6ed93](https://github.com/opencart/opencart/commit/bc6ed93123d1b8896234d11ab9d1a636d83dbc13)
 ### Fixed
 - Class definitions.
