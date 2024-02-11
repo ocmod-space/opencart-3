@@ -2,6 +2,7 @@
 
 $out = array();
 $cleaning_list = array(
+	'.github',
 	'admin/config-dist.php',
 	'install',
 	'tools',
