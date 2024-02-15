@@ -1,5 +1,9 @@
 # Change log (3.0.x.x)
 
+## 2024.02.15_1 [#c458419](https://github.com/opencart/opencart/commit/c4584195a900250d52ba46e524ba71b7bdb8a495)
+### Fixed
+- Removing permissions.
+
 ## 2024.02.11_2 [#c458419](https://github.com/opencart/opencart/commit/c4584195a900250d52ba46e524ba71b7bdb8a495)
 ### Fixed
 - Cache control headers
