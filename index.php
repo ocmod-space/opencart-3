@@ -1,7 +1,7 @@
 <?php
 
 // Version
-define('VERSION', '3.0.3.9.20240211.2');
+define('VERSION', '3.0.3.9.20240215.1');
 
 // Configuration
 if (is_file('config.php')) {
