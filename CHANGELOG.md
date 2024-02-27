@@ -1,5 +1,10 @@
 # Change log (3.0.x.x)
 
+## 2024.02.27_1
+### Fixed
+- Pagination [#13716](https://github.com/opencart/opencart/pull/13716), [#13732](https://github.com/opencart/opencart/pull/13732/commits).
+- Support for Windows line endings. [#13734](https://github.com/opencart/opencart/pull/13734).
+
 ## 2024.02.24_1
 ### Fixed
 - Timezone change breaking session and API [#13704](https://github.com/opencart/opencart/pull/13704/commits/43e43bab2b44228ae7c7b0ab5d241d93c3da7134).
