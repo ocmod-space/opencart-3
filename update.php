@@ -79,4 +79,7 @@ if ($out) {
 	echo '<br/>';
 }
 
+
+echo date('Y-m-d H:i:s') . ': Resetting OPCache: ' . (opcache_reset() ? 'true' : 'false');
+echo '<br/>';
 echo date('Y-m-d H:i:s') . ': done...';
