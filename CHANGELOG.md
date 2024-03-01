@@ -1,5 +1,12 @@
 # Change log (3.0.x.x)
 
+## 2024.03.01_1
+### Fixed
+- Security patch [#13741](https://github.com/opencart/opencart/pull/13741/commits/08651484abd0c2dec2a1789e7017ef887cb86a65).
+- Token generator [#13743](https://github.com/opencart/opencart/pull/13743/commits/c1cc995b02547339d9f6fdb897a6d877533f086d).
+- Added cast to zone_id in setting [#13744](https://github.com/opencart/opencart/pull/13744/commits/518a3ed2bf07004cd95c6dbe8ad10e794709faca).
+- Preventing the last admin account from being disabled [#13745](https://github.com/opencart/opencart/issues/13745).
+
 ## 2024.02.27_1
 ### Fixed
 - Pagination [#13716](https://github.com/opencart/opencart/pull/13716), [#13732](https://github.com/opencart/opencart/pull/13732/commits).
