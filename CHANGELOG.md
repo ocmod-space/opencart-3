@@ -1,5 +1,9 @@
 # Change log (3.0.x.x)
 
+## 2024.03.02_1
+### Fixed
+- Currency cache [#13751](https://github.com/opencart/opencart/pull/13751/commits/458ed8fec2d5fc27b280316aaf7426c309719d3c)
+
 ## 2024.03.01_1
 ### Fixed
 - Security patch [#13741](https://github.com/opencart/opencart/pull/13741/commits/08651484abd0c2dec2a1789e7017ef887cb86a65).
