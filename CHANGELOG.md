@@ -1,5 +1,12 @@
 # Change log (3.0.x.x)
 
+## 2024.04.10_1
+### Fixed
+- Minor changes in  payment_address.twig.
+- Removal of obsolete event handler (ECB extension) [#13775](https://github.com/opencart/opencart/pull/13775/commits/7a71b8c5e36bfba880f590087a39201dc300a569#diff-49855eec2fcd5298019c055df0131f12b4b401fd2095a98d72177e410456efaf).
+- Fixed an issue with saving in Summernote Code View [#13831](https://github.com/opencart/opencart/pull/13831/commits/239a61f76a2e9e1c16ca575ce99219ed75efa021).
+- The "unlink" option for links in Summernote [#13823](https://github.com/opencart/opencart/pull/13823/commits/861c7df7292657cacd75fd60ba2da8863f67c939).
+
 ## 2024.03.02_1
 ### Fixed
 - Currency cache [#13751](https://github.com/opencart/opencart/pull/13751/commits/458ed8fec2d5fc27b280316aaf7426c309719d3c)

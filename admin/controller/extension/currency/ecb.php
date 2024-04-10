@@ -103,14 +103,14 @@ class ControllerExtensionCurrencyEcb extends Controller {
 
 		$trigger = 'model/localisation/currency/refresh/before';
 		$route = 'extension/currency/ecb/eventModelLocalisationCurrencyRefreshBefore';
-		$this->model_setting_event->addEvent( $code, $app . $trigger, $route );
+		$this->model_setting_event->addEvent($code, $app . $trigger, $route);
 	}
 
 	public function uninstall() {
 		// remove event handlers
 		$this->load->model('setting/event');
 		$code = 'currency_ecb';
-		$this->model_setting_event->deleteEventByCode( $code );
+		$this->model_setting_event->deleteEventByCode($code);
 	}
 
 	public function currency() {
@@ -130,7 +130,7 @@ class ControllerExtensionCurrencyEcb extends Controller {
 				curl_close($curl);
 
 				if ($response) {
-					$dom = new \DOMDocument('1.0', 'UTF-8');
+					$dom = new DOMDocument('1.0', 'UTF-8');
 					$dom->loadXml($response);
 
 					$cube = $dom->getElementsByTagName('Cube')->item(0);
