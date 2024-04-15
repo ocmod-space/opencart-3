@@ -768,45 +768,47 @@ class ControllerCustomerCustomer extends Controller {
 		$custom_fields = $this->model_customer_custom_field->getCustomFields($filter_data);
 
 		foreach ($custom_fields as $custom_field) {
-			$data['custom_fields'][] = array(
-				'custom_field_id'    => $custom_field['custom_field_id'],
-				'custom_field_value' => $this->model_customer_custom_field->getCustomFieldValues($custom_field['custom_field_id']),
-				'name'               => $custom_field['name'],
-				'value'              => $custom_field['value'],
-				'type'               => $custom_field['type'],
-				'location'           => $custom_field['location'],
-				'sort_order'         => $custom_field['sort_order']
-			);
+			if ($custom_field['status']) {
+				$data['custom_fields'][] = array(
+					'custom_field_id'    => $custom_field['custom_field_id'],
+					'custom_field_value' => $this->model_customer_custom_field->getCustomFieldValues($custom_field['custom_field_id']),
+					'name'               => $custom_field['name'],
+					'value'              => $custom_field['value'],
+					'type'               => $custom_field['type'],
+					'location'           => $custom_field['location'],
+					'sort_order'         => $custom_field['sort_order']
+				);
 
-			if ($custom_field['type'] == 'file') {
-				if (isset($data['account_custom_field'][$custom_field['custom_field_id']])) {
-					$code = $data['account_custom_field'][$custom_field['custom_field_id']];
-
-					$upload_result = $this->model_tool_upload->getUploadByCode($code);
-
-					$data['account_custom_field'][$custom_field['custom_field_id']] = array();
-					if ($upload_result) {
-						$data['account_custom_field'][$custom_field['custom_field_id']]['name'] = $upload_result['name'];
-						$data['account_custom_field'][$custom_field['custom_field_id']]['code'] = $upload_result['code'];
-					} else {
-						$data['account_custom_field'][$custom_field['custom_field_id']]['name'] = "";
-						$data['account_custom_field'][$custom_field['custom_field_id']]['code'] = $code;
-					}
-				}
-
-				foreach ($data['addresses'] as $address_id => $address) {
-					if (isset($address['custom_field'][$custom_field['custom_field_id']])) {
-						$code = $address['custom_field'][$custom_field['custom_field_id']];
+				if ($custom_field['type'] == 'file') {
+					if (isset($data['account_custom_field'][$custom_field['custom_field_id']])) {
+						$code = $data['account_custom_field'][$custom_field['custom_field_id']];
 
 						$upload_result = $this->model_tool_upload->getUploadByCode($code);
 
-						$data['addresses'][$address_id]['custom_field'][$custom_field['custom_field_id']] = array();
+						$data['account_custom_field'][$custom_field['custom_field_id']] = array();
 						if ($upload_result) {
-							$data['addresses'][$address_id]['custom_field'][$custom_field['custom_field_id']]['name'] = $upload_result['name'];
-							$data['addresses'][$address_id]['custom_field'][$custom_field['custom_field_id']]['code'] = $upload_result['code'];
+							$data['account_custom_field'][$custom_field['custom_field_id']]['name'] = $upload_result['name'];
+							$data['account_custom_field'][$custom_field['custom_field_id']]['code'] = $upload_result['code'];
 						} else {
-							$data['addresses'][$address_id]['custom_field'][$custom_field['custom_field_id']]['name'] = "";
-							$data['addresses'][$address_id]['custom_field'][$custom_field['custom_field_id']]['code'] = $code;
+							$data['account_custom_field'][$custom_field['custom_field_id']]['name'] = "";
+							$data['account_custom_field'][$custom_field['custom_field_id']]['code'] = $code;
+						}
+					}
+
+					foreach ($data['addresses'] as $address_id => $address) {
+						if (isset($address['custom_field'][$custom_field['custom_field_id']])) {
+							$code = $address['custom_field'][$custom_field['custom_field_id']];
+
+							$upload_result = $this->model_tool_upload->getUploadByCode($code);
+
+							$data['addresses'][$address_id]['custom_field'][$custom_field['custom_field_id']] = array();
+							if ($upload_result) {
+								$data['addresses'][$address_id]['custom_field'][$custom_field['custom_field_id']]['name'] = $upload_result['name'];
+								$data['addresses'][$address_id]['custom_field'][$custom_field['custom_field_id']]['code'] = $upload_result['code'];
+							} else {
+								$data['addresses'][$address_id]['custom_field'][$custom_field['custom_field_id']]['name'] = "";
+								$data['addresses'][$address_id]['custom_field'][$custom_field['custom_field_id']]['code'] = $code;
+							}
 						}
 					}
 				}
