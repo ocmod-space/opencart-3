@@ -1,8 +1,13 @@
 # Change log (3.0.x.x)
 
+## 2024.05.17
+### Fixed
+- Hide disabled custom fields when adding/editing orders in the admin.
+- Display detailed information for errors in twig templates.
+
 ## 2024.04.15
 ### Fixed
-- Displaying of disabled custom fields in admin [#13858](https://github.com/opencart/opencart/issues/13858).
+- Hide disabled custom fields in the admin [#13858](https://github.com/opencart/opencart/issues/13858).
 - Remove domain from language and currency cookies [#13849](https://github.com/opencart/opencart/pull/13849/commits/46970ce566f7ffa441ba353c5d8aefaf65afe385).
 
 ## 2024.04.10
