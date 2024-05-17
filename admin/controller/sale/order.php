@@ -656,30 +656,32 @@ class ControllerSaleOrder extends Controller {
 		$custom_fields = $this->model_customer_custom_field->getCustomFields($filter_data);
 
 		foreach ($custom_fields as $custom_field) {
-			$data['custom_fields'][] = array(
-				'custom_field_id'    => $custom_field['custom_field_id'],
-				'custom_field_value' => $this->model_customer_custom_field->getCustomFieldValues($custom_field['custom_field_id']),
-				'name'               => $custom_field['name'],
-				'value'              => $custom_field['value'],
-				'type'               => $custom_field['type'],
-				'location'           => $custom_field['location'],
-				'sort_order'         => $custom_field['sort_order']
-			);
+			if ($custom_field['status']) {
+				$data['custom_fields'][] = array(
+					'custom_field_id'    => $custom_field['custom_field_id'],
+					'custom_field_value' => $this->model_customer_custom_field->getCustomFieldValues($custom_field['custom_field_id']),
+					'name'               => $custom_field['name'],
+					'value'              => $custom_field['value'],
+					'type'               => $custom_field['type'],
+					'location'           => $custom_field['location'],
+					'sort_order'         => $custom_field['sort_order']
+				);
 
-			if ($custom_field['type'] == 'file') {
-				foreach ($custom_field_locations as $location) {
-					if (isset($data[$location][$custom_field['custom_field_id']])) {
-						$code = $data[$location][$custom_field['custom_field_id']];
+				if ($custom_field['type'] == 'file') {
+					foreach ($custom_field_locations as $location) {
+						if (isset($data[$location][$custom_field['custom_field_id']])) {
+							$code = $data[$location][$custom_field['custom_field_id']];
 
-						$upload_result = $this->model_tool_upload->getUploadByCode($code);
+							$upload_result = $this->model_tool_upload->getUploadByCode($code);
 
-						$data[$location][$custom_field['custom_field_id']] = array();
-						if ($upload_result) {
-							$data[$location][$custom_field['custom_field_id']]['name'] = $upload_result['name'];
-							$data[$location][$custom_field['custom_field_id']]['code'] = $upload_result['code'];
-						} else {
-							$data[$location][$custom_field['custom_field_id']]['name'] = "";
-							$data[$location][$custom_field['custom_field_id']]['code'] = $code;
+							$data[$location][$custom_field['custom_field_id']] = array();
+							if ($upload_result) {
+								$data[$location][$custom_field['custom_field_id']]['name'] = $upload_result['name'];
+								$data[$location][$custom_field['custom_field_id']]['code'] = $upload_result['code'];
+							} else {
+								$data[$location][$custom_field['custom_field_id']]['name'] = "";
+								$data[$location][$custom_field['custom_field_id']]['code'] = $code;
+							}
 						}
 					}
 				}
@@ -1048,21 +1050,10 @@ class ControllerSaleOrder extends Controller {
 			$custom_fields = $this->model_customer_custom_field->getCustomFields($filter_data);
 
 			foreach ($custom_fields as $custom_field) {
-				if ($custom_field['location'] == 'account' && isset($order_info['custom_field'][$custom_field['custom_field_id']])) {
-					if ($custom_field['type'] == 'select' || $custom_field['type'] == 'radio') {
-						$custom_field_value_info = $this->model_customer_custom_field->getCustomFieldValue($order_info['custom_field'][$custom_field['custom_field_id']]);
-
-						if ($custom_field_value_info) {
-							$data['account_custom_fields'][] = array(
-								'name'  => $custom_field['name'],
-								'value' => $custom_field_value_info['name']
-							);
-						}
-					}
-
-					if ($custom_field['type'] == 'checkbox' && is_array($order_info['custom_field'][$custom_field['custom_field_id']])) {
-						foreach ($order_info['custom_field'][$custom_field['custom_field_id']] as $custom_field_value_id) {
-							$custom_field_value_info = $this->model_customer_custom_field->getCustomFieldValue($custom_field_value_id);
+				if ($custom_field['status']) {
+					if ($custom_field['location'] == 'account' && isset($order_info['custom_field'][$custom_field['custom_field_id']])) {
+						if ($custom_field['type'] == 'select' || $custom_field['type'] == 'radio') {
+							$custom_field_value_info = $this->model_customer_custom_field->getCustomFieldValue($order_info['custom_field'][$custom_field['custom_field_id']]);
 
 							if ($custom_field_value_info) {
 								$data['account_custom_fields'][] = array(
@@ -1071,23 +1062,36 @@ class ControllerSaleOrder extends Controller {
 								);
 							}
 						}
-					}
 
-					if ($custom_field['type'] == 'text' || $custom_field['type'] == 'textarea' || $custom_field['type'] == 'file' || $custom_field['type'] == 'date' || $custom_field['type'] == 'datetime' || $custom_field['type'] == 'time') {
-						$data['account_custom_fields'][] = array(
-							'name'  => $custom_field['name'],
-							'value' => $order_info['custom_field'][$custom_field['custom_field_id']]
-						);
-					}
+						if ($custom_field['type'] == 'checkbox' && is_array($order_info['custom_field'][$custom_field['custom_field_id']])) {
+							foreach ($order_info['custom_field'][$custom_field['custom_field_id']] as $custom_field_value_id) {
+								$custom_field_value_info = $this->model_customer_custom_field->getCustomFieldValue($custom_field_value_id);
 
-					if ($custom_field['type'] == 'file') {
-						$upload_info = $this->model_tool_upload->getUploadByCode($order_info['custom_field'][$custom_field['custom_field_id']]);
+								if ($custom_field_value_info) {
+									$data['account_custom_fields'][] = array(
+										'name'  => $custom_field['name'],
+										'value' => $custom_field_value_info['name']
+									);
+								}
+							}
+						}
 
-						if ($upload_info) {
+						if ($custom_field['type'] == 'text' || $custom_field['type'] == 'textarea' || $custom_field['type'] == 'file' || $custom_field['type'] == 'date' || $custom_field['type'] == 'datetime' || $custom_field['type'] == 'time') {
 							$data['account_custom_fields'][] = array(
 								'name'  => $custom_field['name'],
-								'value' => $upload_info['name']
+								'value' => $order_info['custom_field'][$custom_field['custom_field_id']]
 							);
+						}
+
+						if ($custom_field['type'] == 'file') {
+							$upload_info = $this->model_tool_upload->getUploadByCode($order_info['custom_field'][$custom_field['custom_field_id']]);
+
+							if ($upload_info) {
+								$data['account_custom_fields'][] = array(
+									'name'  => $custom_field['name'],
+									'value' => $upload_info['name']
+								);
+							}
 						}
 					}
 				}
@@ -1097,22 +1101,10 @@ class ControllerSaleOrder extends Controller {
 			$data['payment_custom_fields'] = array();
 
 			foreach ($custom_fields as $custom_field) {
-				if ($custom_field['location'] == 'address' && isset($order_info['payment_custom_field'][$custom_field['custom_field_id']])) {
-					if ($custom_field['type'] == 'select' || $custom_field['type'] == 'radio') {
-						$custom_field_value_info = $this->model_customer_custom_field->getCustomFieldValue($order_info['payment_custom_field'][$custom_field['custom_field_id']]);
-
-						if ($custom_field_value_info) {
-							$data['payment_custom_fields'][] = array(
-								'name'       => $custom_field['name'],
-								'value'      => $custom_field_value_info['name'],
-								'sort_order' => $custom_field['sort_order']
-							);
-						}
-					}
-
-					if ($custom_field['type'] == 'checkbox' && is_array($order_info['payment_custom_field'][$custom_field['custom_field_id']])) {
-						foreach ($order_info['payment_custom_field'][$custom_field['custom_field_id']] as $custom_field_value_id) {
-							$custom_field_value_info = $this->model_customer_custom_field->getCustomFieldValue($custom_field_value_id);
+				if ($custom_field['status']) {
+					if ($custom_field['location'] == 'address' && isset($order_info['payment_custom_field'][$custom_field['custom_field_id']])) {
+						if ($custom_field['type'] == 'select' || $custom_field['type'] == 'radio') {
+							$custom_field_value_info = $this->model_customer_custom_field->getCustomFieldValue($order_info['payment_custom_field'][$custom_field['custom_field_id']]);
 
 							if ($custom_field_value_info) {
 								$data['payment_custom_fields'][] = array(
@@ -1122,25 +1114,39 @@ class ControllerSaleOrder extends Controller {
 								);
 							}
 						}
-					}
 
-					if ($custom_field['type'] == 'text' || $custom_field['type'] == 'textarea' || $custom_field['type'] == 'file' || $custom_field['type'] == 'date' || $custom_field['type'] == 'datetime' || $custom_field['type'] == 'time') {
-						$data['payment_custom_fields'][] = array(
-							'name'       => $custom_field['name'],
-							'value'      => $order_info['payment_custom_field'][$custom_field['custom_field_id']],
-							'sort_order' => $custom_field['sort_order']
-						);
-					}
+						if ($custom_field['type'] == 'checkbox' && is_array($order_info['payment_custom_field'][$custom_field['custom_field_id']])) {
+							foreach ($order_info['payment_custom_field'][$custom_field['custom_field_id']] as $custom_field_value_id) {
+								$custom_field_value_info = $this->model_customer_custom_field->getCustomFieldValue($custom_field_value_id);
 
-					if ($custom_field['type'] == 'file') {
-						$upload_info = $this->model_tool_upload->getUploadByCode($order_info['payment_custom_field'][$custom_field['custom_field_id']]);
+								if ($custom_field_value_info) {
+									$data['payment_custom_fields'][] = array(
+										'name'       => $custom_field['name'],
+										'value'      => $custom_field_value_info['name'],
+										'sort_order' => $custom_field['sort_order']
+									);
+								}
+							}
+						}
 
-						if ($upload_info) {
+						if ($custom_field['type'] == 'text' || $custom_field['type'] == 'textarea' || $custom_field['type'] == 'file' || $custom_field['type'] == 'date' || $custom_field['type'] == 'datetime' || $custom_field['type'] == 'time') {
 							$data['payment_custom_fields'][] = array(
 								'name'       => $custom_field['name'],
-								'value'      => $upload_info['name'],
+								'value'      => $order_info['payment_custom_field'][$custom_field['custom_field_id']],
 								'sort_order' => $custom_field['sort_order']
 							);
+						}
+
+						if ($custom_field['type'] == 'file') {
+							$upload_info = $this->model_tool_upload->getUploadByCode($order_info['payment_custom_field'][$custom_field['custom_field_id']]);
+
+							if ($upload_info) {
+								$data['payment_custom_fields'][] = array(
+									'name'       => $custom_field['name'],
+									'value'      => $upload_info['name'],
+									'sort_order' => $custom_field['sort_order']
+								);
+							}
 						}
 					}
 				}
@@ -1150,22 +1156,10 @@ class ControllerSaleOrder extends Controller {
 			$data['shipping_custom_fields'] = array();
 
 			foreach ($custom_fields as $custom_field) {
-				if ($custom_field['location'] == 'address' && isset($order_info['shipping_custom_field'][$custom_field['custom_field_id']])) {
-					if ($custom_field['type'] == 'select' || $custom_field['type'] == 'radio') {
-						$custom_field_value_info = $this->model_customer_custom_field->getCustomFieldValue($order_info['shipping_custom_field'][$custom_field['custom_field_id']]);
-
-						if ($custom_field_value_info) {
-							$data['shipping_custom_fields'][] = array(
-								'name'       => $custom_field['name'],
-								'value'      => $custom_field_value_info['name'],
-								'sort_order' => $custom_field['sort_order']
-							);
-						}
-					}
-
-					if ($custom_field['type'] == 'checkbox' && is_array($order_info['shipping_custom_field'][$custom_field['custom_field_id']])) {
-						foreach ($order_info['shipping_custom_field'][$custom_field['custom_field_id']] as $custom_field_value_id) {
-							$custom_field_value_info = $this->model_customer_custom_field->getCustomFieldValue($custom_field_value_id);
+				if ($custom_field['status']) {
+					if ($custom_field['location'] == 'address' && isset($order_info['shipping_custom_field'][$custom_field['custom_field_id']])) {
+						if ($custom_field['type'] == 'select' || $custom_field['type'] == 'radio') {
+							$custom_field_value_info = $this->model_customer_custom_field->getCustomFieldValue($order_info['shipping_custom_field'][$custom_field['custom_field_id']]);
 
 							if ($custom_field_value_info) {
 								$data['shipping_custom_fields'][] = array(
@@ -1175,25 +1169,39 @@ class ControllerSaleOrder extends Controller {
 								);
 							}
 						}
-					}
 
-					if ($custom_field['type'] == 'text' || $custom_field['type'] == 'textarea' || $custom_field['type'] == 'file' || $custom_field['type'] == 'date' || $custom_field['type'] == 'datetime' || $custom_field['type'] == 'time') {
-						$data['shipping_custom_fields'][] = array(
-							'name'       => $custom_field['name'],
-							'value'      => $order_info['shipping_custom_field'][$custom_field['custom_field_id']],
-							'sort_order' => $custom_field['sort_order']
-						);
-					}
+						if ($custom_field['type'] == 'checkbox' && is_array($order_info['shipping_custom_field'][$custom_field['custom_field_id']])) {
+							foreach ($order_info['shipping_custom_field'][$custom_field['custom_field_id']] as $custom_field_value_id) {
+								$custom_field_value_info = $this->model_customer_custom_field->getCustomFieldValue($custom_field_value_id);
 
-					if ($custom_field['type'] == 'file') {
-						$upload_info = $this->model_tool_upload->getUploadByCode($order_info['shipping_custom_field'][$custom_field['custom_field_id']]);
+								if ($custom_field_value_info) {
+									$data['shipping_custom_fields'][] = array(
+										'name'       => $custom_field['name'],
+										'value'      => $custom_field_value_info['name'],
+										'sort_order' => $custom_field['sort_order']
+									);
+								}
+							}
+						}
 
-						if ($upload_info) {
+						if ($custom_field['type'] == 'text' || $custom_field['type'] == 'textarea' || $custom_field['type'] == 'file' || $custom_field['type'] == 'date' || $custom_field['type'] == 'datetime' || $custom_field['type'] == 'time') {
 							$data['shipping_custom_fields'][] = array(
 								'name'       => $custom_field['name'],
-								'value'      => $upload_info['name'],
+								'value'      => $order_info['shipping_custom_field'][$custom_field['custom_field_id']],
 								'sort_order' => $custom_field['sort_order']
 							);
+						}
+
+						if ($custom_field['type'] == 'file') {
+							$upload_info = $this->model_tool_upload->getUploadByCode($order_info['shipping_custom_field'][$custom_field['custom_field_id']]);
+
+							if ($upload_info) {
+								$data['shipping_custom_fields'][] = array(
+									'name'       => $custom_field['name'],
+									'value'      => $upload_info['name'],
+									'sort_order' => $custom_field['sort_order']
+								);
+							}
 						}
 					}
 				}
