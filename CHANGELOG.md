@@ -4,6 +4,8 @@
 ### Updated
 - Installing symfony/deprecation-contracts (v2.5.3).
 - Upgrading twig/twig (v3.8.0 => v3.10.3).
+### Fixed
+- [#13953](https://github.com/opencart/opencart/issues/13953).
 
 ## 2024.05.17
 ### Fixed
