@@ -8,11 +8,11 @@
     "config": {
         "vendor-dir": "./system/storage/vendor/",
         "platform": {
-            "php": "7.3.33"
+            "php": "7.4.33"
         }
     },
     "require": {
-      "php": ">=7.3.33",
+      "php": "^7.4",
       "scssphp/scssphp": "^1.11.0",
       "twig/twig": "^3.3"
   },
