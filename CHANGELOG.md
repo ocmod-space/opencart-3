@@ -1,5 +1,10 @@
 # Change log (3.0.x.x)
 
+## 2024.05.20
+### Updated
+- Installing symfony/deprecation-contracts (v2.5.3).
+- Upgrading twig/twig (v3.8.0 => v3.10.3).
+
 ## 2024.05.17
 ### Fixed
 - Hide disabled custom fields when adding/editing orders in the admin.
