@@ -6,10 +6,13 @@
     "homepage": "http://www.opencart.com",
     "license": "GPL-3.0+",
     "config": {
-        "vendor-dir": "./system/storage/vendor/"
+        "vendor-dir": "./system/storage/vendor/",
+        "platform": {
+            "php": "7.3.33"
+        }
     },
     "require": {
-      "php": ">=7.3.0",
+      "php": ">=7.3.33",
       "scssphp/scssphp": "^1.11.0",
       "twig/twig": "^3.3"
   },
