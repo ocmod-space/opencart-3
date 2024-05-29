@@ -1,5 +1,9 @@
 # Change log (3.0.x.x)
 
+## 2024.05.29
+### Fixed
+- Currency refresh [#13969](https://github.com/opencart/opencart/pull/13969/commits/9d97154f1d5a0a2b8ce3c8ab082e64546d8cf4a8),[#13972](https://github.com/opencart/opencart/pull/13972/commits/e7890eac895c4935cf9be6e286f5c1fa211ac1c6).
+
 ## 2024.05.20
 ### Updated
 - Installing symfony/deprecation-contracts (v2.5.3).
