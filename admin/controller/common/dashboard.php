@@ -96,7 +96,6 @@ class ControllerCommonDashboard extends Controller {
 			$config_currency_engine = $this->config->get('config_currency_engine');
 
 			if ($config_currency_engine) {
-				$this->model_localisation_currency->refresh();
 				$this->load->controller('extension/currency/' . $config_currency_engine . '/currency');
 			}
 		}
