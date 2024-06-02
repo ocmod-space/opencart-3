@@ -1,5 +1,10 @@
 # Change log (3.0.x.x)
 
+## 2024.06.02
+### Fixed
+- Unused code [#13967](https://github.com/opencart/opencart/pull/13967/commits/8e91d76fc3a10f2f7d9493587c00154508368dc2).
+- ECB currency module [#13982](https://github.com/opencart/opencart/pull/13982/commits/253a45f8ecd4c176c0dc4adeff220a9a01d8bf71), [#13983](https://github.com/opencart/opencart/pull/13983/commits/864e720e97fc70d67fa80b0c1b0286f7bd18ca4b#diff-5b1ee3a287df1c3566088729fda07ffad61d4c0771c67d4b44967f9e068990e2).
+
 ## 2024.05.29
 ### Fixed
 - Currency refresh [#13969](https://github.com/opencart/opencart/pull/13969/commits/9d97154f1d5a0a2b8ce3c8ab082e64546d8cf4a8),[#13972](https://github.com/opencart/opencart/pull/13972/commits/e7890eac895c4935cf9be6e286f5c1fa211ac1c6).
