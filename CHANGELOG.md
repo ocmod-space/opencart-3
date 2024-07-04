@@ -1,5 +1,9 @@
 # Change log (3.0.x.x)
 
+## 2024.07.04
+### Fixed
+- Improved pagination limit verifications [#14013](https://github.com/opencart/opencart/commit/09f4d4b5a5b25b724ec18f59d849b9a0c3d54b8b).
+
 ## 2024.06.02
 ### Fixed
 - Unused code [#13967](https://github.com/opencart/opencart/pull/13967/commits/8e91d76fc3a10f2f7d9493587c00154508368dc2).
