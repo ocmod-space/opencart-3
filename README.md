@@ -8,7 +8,7 @@ This is a customized version of OpenCart [3.0.x.x](https://github.com/opencart/o
 The project is actively used, so all *official* fixes are synchronized in time.
 
 ## License
-[GNU General Public License version 3 (GPLv3)](https://github.com/ocmod-space/opencart3-ce/blob/main/LICENSE.md)
+[GNU General Public License version 3 (GPLv3)](https://github.com/ocmod-space/opencart-3/blob/main/LICENSE.md)
 
 ## Links
 - [OpenCart homepage](http://www.opencart.com/)
