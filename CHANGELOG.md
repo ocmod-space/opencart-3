@@ -1,5 +1,11 @@
 # Change log (3.0.x.x)
 
+## 2024.09.07
+### Updated
+- `smtp.php` [#270a07d](https://github.com/opencart/opencart/commit/270a07d04e04b24d4ca67357b71f0588a42fa873).
+### Fixed
+- Error caused when default currency not in ECB list  [#14112](https://github.com/opencart/opencart/pull/14112).
+
 ## 2024.07.04
 ### Fixed
 - Improved pagination limit verifications [#14013](https://github.com/opencart/opencart/commit/09f4d4b5a5b25b724ec18f59d849b9a0c3d54b8b).

@@ -32,6 +32,7 @@ class Smtp extends \stdClass {
 			$header .= 'Reply-To: =?UTF-8?B?' . base64_encode($this->reply_to) . '?= <' . $this->reply_to . '>' . PHP_EOL;
 		}
 
+		$header .= 'Message-ID: <' . base_convert(str_replace(array('.', ' '), '', microtime()), 10, 36) . '.' . base_convert(bin2hex(openssl_random_pseudo_bytes(8)), 16, 36) . substr($this->option['from'], strrpos($this->option['from'], '@')) . '>' . PHP_EOL;
 		$header .= 'Return-Path: ' . $this->from . PHP_EOL;
 		$header .= 'X-Mailer: PHP/' . phpversion() . PHP_EOL;
 		$header .= 'Content-Type: multipart/mixed; boundary="' . $boundary . '"' . PHP_EOL . PHP_EOL;
