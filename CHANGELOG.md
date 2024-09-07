@@ -5,6 +5,7 @@
 - `smtp.php` [#270a07d](https://github.com/opencart/opencart/commit/270a07d04e04b24d4ca67357b71f0588a42fa873).
 ### Fixed
 - Error caused when default currency not in ECB list  [#14112](https://github.com/opencart/opencart/pull/14112).
+- Typo api controller [#14090](https://github.com/opencart/opencart/pull/14090).
 
 ## 2024.07.04
 ### Fixed
