@@ -1,5 +1,14 @@
 # Change log (3.0.x.x)
 
+## 2024.09.17
+### Upgraded
+  - Upgraded symfony/polyfill-ctype (v1.29.0 => v1.31.0)
+  - Upgraded scssphp/scssphp (v1.12.1 => v1.13.0)
+  - Installed symfony/polyfill-php81 (v1.31.0)
+  - Upgraded symfony/polyfill-php80 (v1.29.0 => v1.31.0)
+  - Upgraded symfony/polyfill-mbstring (v1.29.0 => v1.31.0)
+  - Upgraded twig/twig (v3.10.3 => v3.11.1)
+
 ## 2024.09.07
 ### Updated
 - `smtp.php` [#270a07d](https://github.com/opencart/opencart/commit/270a07d04e04b24d4ca67357b71f0588a42fa873).

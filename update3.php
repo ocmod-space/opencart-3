@@ -43,7 +43,7 @@ echo date('Y-m-d H:i:s') . ': starting...' . '<br/>';
 
 switch (true) {
 	case !is_dir('.git') && isset($_GET['install']):
-		exec('git clone https://github.com/ocmod-space/opencart3-ce ./x', $out);
+		exec('git clone https://github.com/ocmod-space/opencart-3 ./x', $out);
 		exec('mv x/.* x/* .');
 		exec('rm -rf ./x');
 
