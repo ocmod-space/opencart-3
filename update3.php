@@ -50,7 +50,7 @@ switch (true) {
 		break;
 
 	case isset($_GET['update']) && is_dir('.git'):
-		exec('git reset --hard origin/3.0.x.x', $out);
+		exec('git reset --hard origin/main', $out);
 		exec('git pull', $out);
 
 		foreach ($cleaning_list as $item) {
