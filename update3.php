@@ -49,6 +49,16 @@ switch (true) {
 
 		break;
 
+	case isset($_GET['rename']):
+		exec('git remote rm origin', $out);
+		exec('git remote add origin https://github.com/ocmod-space/opencart-3', $out);
+		exec('git branch -m 3.0.x.x main', $out);
+		exec('git fetch origin', $out);
+		exec('git branch -u origin/main main', $out);
+		exec('git remote set-head origin -a', $out);
+
+		break;
+
 	case isset($_GET['update']) && is_dir('.git'):
 		exec('git reset --hard origin/main', $out);
 		exec('git pull', $out);
