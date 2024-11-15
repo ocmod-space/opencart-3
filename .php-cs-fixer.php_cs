@@ -44,7 +44,7 @@ return $config
 			),
 		),
 		'cast_spaces'                                   => false,
-		'class_attributes_separation'                   => array('elements' => array('method'                   => 'one')),
+		'class_attributes_separation'                   => array('elements' => array('method' => 'one')),
 		'class_definition'                              => array('single_line' => true),
 		'clean_namespace'                               => true,
 		'compact_nullable_typehint'                     => true,
@@ -52,9 +52,11 @@ return $config
 		'constant_case'                                 => true,
 		'control_structure_braces'                      => false,
 		'control_structure_continuation_position'       => array('position' => 'same_line'),
-		'curly_braces_position'                         => array(
+		'braces_position'                               => array(
 			'allow_single_line_anonymous_functions'     => true,
 			'allow_single_line_empty_anonymous_classes' => true,
+			'anonymous_classes_opening_brace'           => 'same_line',
+			'anonymous_functions_opening_brace'         => 'same_line',
 			'classes_opening_brace'                     => 'same_line',
 			'control_structures_opening_brace'          => 'same_line',
 			'functions_opening_brace'                   => 'same_line',
@@ -68,10 +70,9 @@ return $config
 		'explicit_indirect_variable'                    => true,
 		'explicit_string_variable'                      => true,
 		'full_opening_tag'                              => true,
-		'fully_qualified_strict_types'                  => true,
 		'function_declaration'                          => true,
 		'function_typehint_space'                       => true,
-		'general_phpdoc_tag_rename'                     => array('replacements' => array('inheritDocs'                     => 'inheritDoc')),
+		'general_phpdoc_tag_rename'                     => array('replacements' => array('inheritDocs' => 'inheritDoc')),
 		'heredoc_to_nowdoc'                             => false,
 		'include'                                       => false,
 		'indentation_type'                              => true,
@@ -135,7 +136,18 @@ return $config
 		'no_trailing_comma_in_singleline_array'         => true,
 		'no_trailing_whitespace'                        => true,
 		'no_trailing_whitespace_in_comment'             => true,
-		'no_unneeded_control_parentheses'               => array('statements' => array('break', 'clone', 'continue', 'echo_print', 'return', 'switch_case', 'yield', 'yield_from')),
+		'no_unneeded_control_parentheses'               => array(
+			'statements' => array(
+				'break',
+				'clone',
+				'continue',
+				'echo_print',
+				'return',
+				'switch_case',
+				'yield',
+				'yield_from'
+			)
+		),
 		'no_unneeded_curly_braces'                      => array('namespaces' => true),
 		'no_unset_cast'                                 => true,
 		'no_unused_imports'                             => true,
@@ -169,7 +181,11 @@ return $config
 		'phpdoc_separation'                             => true,
 		'phpdoc_single_line_var_spacing'                => true,
 		'phpdoc_summary'                                => true,
-		'phpdoc_tag_type'                               => array('tags' => array('inheritDoc'                               => 'inline')),
+		'phpdoc_tag_type'                               => array(
+			'tags' => array(
+				'inheritDoc' => 'inline'
+			)
+		),
 		'phpdoc_to_comment'                             => true,
 		'phpdoc_trim'                                   => true,
 		'phpdoc_trim_consecutive_blank_line_separation' => true,
@@ -190,12 +206,16 @@ return $config
 		'single_line_after_imports'                     => true,
 		// 'single_line_comment_style'                     => array(),
 		'single_quote'                                  => false,
-		'single_space_after_construct'                  => true,
+		// 'single_space_after_construct'                  => true,
 		'single_trait_insert_per_statement'             => true,
-		'space_after_semicolon'                         => array('remove_in_empty_for_expressions' => true),
+		'space_after_semicolon'                         => array(
+			'remove_in_empty_for_expressions' => true
+		),
 		'standardize_increment'                         => true,
 		'standardize_not_equals'                        => true,
-		'statement_indentation'                         => true,
+		'statement_indentation'                         => array(
+			'stick_comment_to_next_continuous_control_statement' => true
+		),
 		'switch_case_semicolon_to_colon'                => true,
 		'switch_case_space'                             => true,
 		'switch_continue_to_break'                      => true,
