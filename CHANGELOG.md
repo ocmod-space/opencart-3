@@ -1,7 +1,12 @@
 # Change log (3.0.x.x)
 
+## 2024.11.15
+### Updated
+  - JQuery 3.7.1
+  - Bump twig/twig from 3.11.1 to 3.11.2
+
 ## 2024.09.17
-### Upgraded
+### Updated
   - Upgraded symfony/polyfill-ctype (v1.29.0 => v1.31.0)
   - Upgraded scssphp/scssphp (v1.12.1 => v1.13.0)
   - Installed symfony/polyfill-php81 (v1.31.0)
