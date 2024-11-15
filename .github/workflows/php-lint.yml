@@ -1,11 +1,11 @@
-name: PHP-lint
+name: PHP-Lint
 
 on:
   push:
     branches:
       - main
   pull_request:
-    types: [opened, synchronize]
+    types: [opened, synchronize, reopened]
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -18,14 +18,7 @@ jobs:
       matrix:
         php: ['7.4', '8.0', '8.1', '8.2', '8.3']
     steps:
-      - name: Checkout for pull request
-        if: ${{ github.event_name == 'pull_request' }}
-        uses: actions/checkout@v3
-        with:
-          ref: 'refs/pull/${{ github.event.pull_request.number }}/merge'
-
-      - name: Checkout for push
-        if: ${{ github.event_name != 'pull_request' }}
+      - name: Checkout
         uses: actions/checkout@v3
 
       - name: Setup PHP
