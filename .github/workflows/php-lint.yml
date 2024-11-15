@@ -1,4 +1,4 @@
-name: Lint
+name: PHP-lint
 
 on:
   push:
@@ -18,8 +18,15 @@ jobs:
       matrix:
         php: ['7.4', '8.0', '8.1', '8.2', '8.3']
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+      - name: Checkout for pull request
+        if: ${{ github.event_name == 'pull_request' }}
+        uses: actions/checkout@v3
+        with:
+          ref: 'refs/pull/${{ github.event.pull_request.number }}/merge'
+
+      - name: Checkout for push
+        if: ${{ github.event_name != 'pull_request' }}
+        uses: actions/checkout@v3
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -59,6 +66,6 @@ jobs:
       - name: Code style
         if: matrix.php == '8.3'
         run: |
-          composer require --dev -w friendsofphp/php-cs-fixer v3.41.1
+          composer require --dev -w friendsofphp/php-cs-fixer v3.64.0
           ./system/storage/vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.php_cs --dry-run --diff --ansi || true
           ./system/storage/vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.php_cs --dry-run --format=checkstyle | cs2pr
