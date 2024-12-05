@@ -53,7 +53,7 @@ $(document).ready(function() {
 			}
 		}
 	}
-	
+
 	// tooltip remove
 	$('[data-toggle=\'tooltip\']').on('remove', function() {
 		$(this).tooltip('destroy');
@@ -63,10 +63,10 @@ $(document).ready(function() {
 	$(document).on('click', '[data-toggle=\'tooltip\']', function(e) {
 		$('body > .tooltip').remove();
 	});
-	
+
 	$('#button-menu').on('click', function(e) {
 		e.preventDefault();
-		
+
 		$('#column-left').toggleClass('active');
 	});
 
@@ -81,13 +81,13 @@ $(document).ready(function() {
 		// Sets active and open to selected page in the left column menu.
 		$('#menu a[href=\'' + sessionStorage.getItem('menu') + '\']').parent().addClass('active');
 	}
-	
+
 	$('#menu a[href=\'' + sessionStorage.getItem('menu') + '\']').parents('li > a').removeClass('collapsed');
-	
+
 	$('#menu a[href=\'' + sessionStorage.getItem('menu') + '\']').parents('ul').addClass('in');
-	
+
 	$('#menu a[href=\'' + sessionStorage.getItem('menu') + '\']').parents('li').addClass('active');
-	
+
 	// Image Manager
 	$(document).on('click', 'a[data-toggle=\'image\']', function(e) {
 		var $element = $(this);
@@ -115,11 +115,11 @@ $(document).ready(function() {
 
 		$element.popover('show');
 
-		setTimeout(function(){ // fix bind events on new popover when 
+		setTimeout(function() { // fix bind events on new popover when 
 
 			$('#button-image').on('click', function() {
 				var $button = $(this);
-				var $icon   = $button.find('> i');
+				var $icon = $button.find('> i');
 
 				$('#modal-image').remove();
 
@@ -156,9 +156,9 @@ $(document).ready(function() {
 
 				$element.popover('destroy');
 			});
-			
+
 		}, 250); // end timeout fix
-			
+
 	});
 });
 
@@ -190,7 +190,7 @@ $(document).ready(function() {
 
 			// Keydown
 			$this.on('keydown', function(event) {
-				switch(event.keyCode) {
+				switch (event.keyCode) {
 					case 27: // escape
 						this.hide();
 						break;

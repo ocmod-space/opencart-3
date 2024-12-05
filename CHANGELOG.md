@@ -1,5 +1,15 @@
 # Change log (3.0.x.x)
 
+## 2024.12.06
+### Updated
+  - symfony/deprecation-contracts (v2.5.3 => v2.5.4)
+  - twig/twig (v3.11.1 => v3.11.3)
+  - Basic version (v3.0.4.0 => v3.0.4.1).
+### Added
+  - Added whatismyipaddress to customer_search_info report [#14244](https://github.com/opencart/opencart/pull/14244/commits/1d0bdb1ce0dcb391e6dd904018b1aa384e136d86)
+### Fixed
+  - Whitespaces.
+
 ## 2024.11.15
 ### Updated
   - JQuery 3.7.1
