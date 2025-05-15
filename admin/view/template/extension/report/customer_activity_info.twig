@@ -51,12 +51,12 @@
               </tr>
             </thead>
             <tbody>
-            
+
             {% if activities %}
             {% for activity in activities %}
             <tr>
               <td class="text-left">{{ activity.comment }}</td>
-              <td class="text-left">{{ activity.ip }}</td>
+              <td class="text-left"><a href="https://whatismyipaddress.com/ip/{{ activity.ip }}" target="_blank">{{ activity.ip }}</a></td>
               <td class="text-left">{{ activity.date_added }}</td>
             </tr>
             {% endfor %}
@@ -66,7 +66,7 @@
             </tr>
             {% endif %}
             </tbody>
-            
+
           </table>
         </div>
         <div class="row">
@@ -107,13 +107,13 @@ $('#button-filter').on('click', function() {
 
 	location = 'index.php?route=report/report&code=customer_activity&user_token={{ user_token }}' + url;
 });
-//--></script> 
+//--></script>
 <script type="text/javascript"><!--
 $('.date').datetimepicker({
 	language: '{{ datepicker }}',
 	pickTime: false
 });
-//--></script> 
+//--></script>
 <script type="text/javascript"><!--
 $('input[name=\'filter_customer\']').autocomplete({
 	'source': function(request, response) {
