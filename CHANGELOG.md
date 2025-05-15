@@ -1,5 +1,18 @@
 # Change log (3.0.x.x)
 
+## 2025.05.15
+### Added
+  - Added whatismyipaddress to customer_search_info report [#14243](https://github.com/opencart/opencart/pull/14243).
+### Fixed
+  - https [#14242](https://github.com/opencart/opencart/pull/14242).
+  - URL encoding for product tags [#14256](https://github.com/opencart/opencart/pull/14256), [#14257](https://github.com/opencart/opencart/pull/14257).
+  - Typos [#14296](https://github.com/opencart/opencart/pull/14296).
+  - Saving new product with a recurring payment profile [#14397](https://github.com/opencart/opencart/pull/14397).
+  - Cookie lifetime [#14638](https://github.com/opencart/opencart/pull/14638), [#14645](https://github.com/opencart/opencart/pull/14645).
+  - Product sort order [#14864](https://github.com/opencart/opencart/pull/14864).
+  - Alert close button positioning [#14856](https://github.com/opencart/opencart/pull/14856).
+  - Add missing space [#14871](https://github.com/opencart/opencart/issues/14871).
+
 ## 2024.12.06
 ### Updated
   - symfony/deprecation-contracts (v2.5.3 => v2.5.4)
