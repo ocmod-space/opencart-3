@@ -1,5 +1,11 @@
 # Change log (3.0.x.x)
 
+## 2025.06.11
+### Added
+ - Add `OPTIMIZE TABLE` to `db.php` [#14915](https://github.com/opencart/opencart/pull/14915).
+### Fixed
+ - Language
+
 ## 2025.05.15
 ### Added
   - Added whatismyipaddress to customer_search_info report [#14243](https://github.com/opencart/opencart/pull/14243).
