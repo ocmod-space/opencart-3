@@ -1,4 +1,10 @@
-# Change log (3.0.x.x)
+# Change log (3.x.x.x)
+
+## 2025.06.18
+### Fixed
+ - Suppressed PHP warnings on cache file deletion using @unlink().
+### Fixed
+ - Language
 
 ## 2025.06.11
 ### Added
