@@ -1,4 +1,5 @@
 .htaccess
+.vscode.code-workspace
 config.php
 admin/config.php
 
