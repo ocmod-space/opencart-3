@@ -1,16 +1,19 @@
 # Change log (3.x.x.x)
 
+## 2025.06.23
+### Fixed
+ - Google Base feed module: Added support for more currencies, fix for price tag which must include currency code [#14956](https://github.com/opencart/opencart/pull/14956).
+
 ## 2025.06.18
 ### Fixed
  - Suppressed PHP warnings on cache file deletion using @unlink().
-### Fixed
- - Language
+ - Language entries.
 
 ## 2025.06.11
 ### Added
  - Add `OPTIMIZE TABLE` to `db.php` [#14915](https://github.com/opencart/opencart/pull/14915).
 ### Fixed
- - Language
+ - Language entries.
 
 ## 2025.05.15
 ### Added
